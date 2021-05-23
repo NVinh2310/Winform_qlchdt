@@ -79,7 +79,7 @@ namespace QuanLyPhuKienDienTu.BLL
                 if (String.Compare(i.TenThuongHieu, th)==0)
                     return i;
             }
-            return new ThuongHieu();
+            return null;
         }
 
     }

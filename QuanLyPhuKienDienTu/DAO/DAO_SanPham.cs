@@ -123,8 +123,8 @@ namespace QuanLyPhuKienDienTu.DAO
             List<ThuongHieu> th = new List<ThuongHieu>();
             using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
             {
-                var data = (from p in db.ThuongHieux select p).Distinct().ToList();
-                foreach (var item in data)
+                
+                foreach (var item in db.ThuongHieux.ToList())
                 {
                     th.Add(new ThuongHieu()
                     {
@@ -143,7 +143,7 @@ namespace QuanLyPhuKienDienTu.DAO
             List<Loai> ls = new List<Loai>();
             using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
             {
-                foreach (var item in db.Loais.Distinct().ToList())
+                foreach (var item in db.Loais.ToList())
                 {
                     ls.Add(new Loai()
                     {

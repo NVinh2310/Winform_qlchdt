@@ -64,14 +64,14 @@ namespace QuanLyPhuKienDienTu.BLL
 
         public KhachHang GetKhachHangBySDT(string sdt)
         {
-            KhachHang kh = new KhachHang();
+            
             foreach (KhachHang i in DAO.DAO_KhachHang.Instance.GetKhachHang())
             {
                 if (String.Compare(sdt, i.SoDienThoai, true) == 0)
                 
                 return i; 
             }
-            return kh;
+            return null;
         }
 
         public KhachHang GetKhachHangByID(int id)
