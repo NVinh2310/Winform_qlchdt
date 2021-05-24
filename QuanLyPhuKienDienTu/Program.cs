@@ -17,8 +17,7 @@ namespace QuanLyPhuKienDienTu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormKhachHang());
-
+            Application.Run(new FormNhanVien());
         }
     }
 }
