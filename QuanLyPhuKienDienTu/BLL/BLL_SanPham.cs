@@ -33,7 +33,7 @@ namespace QuanLyPhuKienDienTu.BLL
         {
             return DAO_SanPham.Instance.GetListSP(masp, namesp);
         }
-        public List<SanPham> GetSanPhamByName(string name)
+        public List<SanPham_View> GetSanPhamByName(string name)
         {
             return DAO_SanPham.Instance.GetSanPhamByName(name);
         }
@@ -57,22 +57,22 @@ namespace QuanLyPhuKienDienTu.BLL
         {
             return DAO_SanPham.Instance.XoaSanPham(masp);
         }
-        public List<SanPham_View> GetSanPham_Views(string tensp, string loai, string thuonghieu , string gia )
+        public List<SanPham_View> GetSanPham_Views(string tensp, string loai, string thuonghieu, string gia)
         {
             List<SanPham_View> list = new List<SanPham_View>();
-            foreach(SanPham_View i in DAO.DAO_SanPham.Instance.GetSanPhamView())
+            foreach (SanPham_View i in DAO.DAO_SanPham.Instance.GetSanPhamView())
             {
-                if(tensp =="All")
+                if (tensp == "All")
                 {
-                    if(loai=="All")
+                    if (loai == "All")
                     {
-                        if(thuonghieu=="All")
+                        if (thuonghieu == "All")
                         {
                             if (gia == "All")
                                 list.Add(i);
                             else
                             {
-                                switch(gia)
+                                switch (gia)
                                 {
                                     case "Dưới 5 triệu":
                                         if (Convert.ToDecimal(i.GiaBan) < 5000000)
@@ -95,7 +95,7 @@ namespace QuanLyPhuKienDienTu.BLL
                         }
                         else
                         {
-                            if (gia == "All"&& i.TenThuongHieu ==thuonghieu)
+                            if (gia == "All" && i.TenThuongHieu == thuonghieu)
                                 list.Add(i);
                             else
                             {
@@ -119,13 +119,13 @@ namespace QuanLyPhuKienDienTu.BLL
                                         break;
                                 }
                             }
-                        }    
+                        }
                     }
                     else
                     {
-                        if (thuonghieu == "All" && i.TenLoai ==loai)
+                        if (thuonghieu == "All" && i.TenLoai == loai)
                         {
-                            if (gia == "All"&&i.TenLoai == loai)
+                            if (gia == "All" && i.TenLoai == loai)
                                 list.Add(i);
                             else
                             {
@@ -177,7 +177,7 @@ namespace QuanLyPhuKienDienTu.BLL
                                 }
                             }
                         }
-                    }    
+                    }
                 }
                 else
                 {
@@ -299,17 +299,20 @@ namespace QuanLyPhuKienDienTu.BLL
             }
             return list;
         }
-        
+
         // Lấy SanPham_View theo mã sản phẩm
         public SanPham_View GetSanPhamByID(int id)
         {
-            foreach(SanPham_View i in DAO.DAO_SanPham.Instance.GetSanPhamView())
+            foreach (SanPham_View i in DAO.DAO_SanPham.Instance.GetSanPhamView())
             {
                 if (i.MaSanPham == id)
                     return i;
             }
             return new SanPham_View();
         }
-        
+        public bool SanPhamSauGiaoDich(int masp, int slgSauGiaoDich)
+        {
+            return DAO.DAO_SanPham.Instance.SanPhamSauGiaoDich(masp, slgSauGiaoDich);
+        }
     }
 }

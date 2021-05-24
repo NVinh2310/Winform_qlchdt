@@ -70,7 +70,7 @@ namespace QuanLyPhuKienDienTu.BLL
             {
                 if (i.MaThuongHieu == MaThuongHieu)
                     return i;
-            }    return new ThuongHieu();
+            }    return null;
         }
         public ThuongHieu GetThuongHieuByTen(string th)
         {

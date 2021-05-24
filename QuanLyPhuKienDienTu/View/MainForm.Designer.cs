@@ -98,8 +98,6 @@ namespace QuanLyPhuKienDienTu
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TB_ButtonThanhToan = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numericDiscount = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
@@ -189,8 +187,6 @@ namespace QuanLyPhuKienDienTu
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TN_buttonThanhToan = new System.Windows.Forms.Button();
-            this.label41 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label42 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -205,7 +201,6 @@ namespace QuanLyPhuKienDienTu
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericSoLuongBan)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericDiscount)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -220,7 +215,6 @@ namespace QuanLyPhuKienDienTu
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TN_dgvTH)).BeginInit();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -336,7 +330,6 @@ namespace QuanLyPhuKienDienTu
             this.panel1.Controls.Add(this.groupBox7);
             this.panel1.Controls.Add(this.groupBox6);
             this.panel1.Controls.Add(this.groupBox5);
-            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -355,11 +348,17 @@ namespace QuanLyPhuKienDienTu
             this.groupBox8.Controls.Add(this.TB_cbbDiaChiKH);
             this.groupBox8.Controls.Add(this.TB_cbbTenKH);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.groupBox8.Location = new System.Drawing.Point(556, 280);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox8.Size = new System.Drawing.Size(312, 406);
+=======
+            this.groupBox8.Location = new System.Drawing.Point(739, 629);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(416, 228);
+>>>>>>> 9217e3167f74b1244df10608ede62b0bab734e74
             this.groupBox8.TabIndex = 9;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Thông tin khách hàng";
@@ -456,15 +455,22 @@ namespace QuanLyPhuKienDienTu
             this.groupBox7.Controls.Add(this.panel14);
             this.groupBox7.Controls.Add(this.TB_txtTimSP);
             this.groupBox7.Controls.Add(this.TB_ButtonTimSP);
+            this.groupBox7.Controls.Add(this.panel5);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.groupBox7.Location = new System.Drawing.Point(548, 4);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox7.Size = new System.Drawing.Size(321, 207);
+=======
+            this.groupBox7.Location = new System.Drawing.Point(733, 324);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(428, 299);
+>>>>>>> 9217e3167f74b1244df10608ede62b0bab734e74
             this.groupBox7.TabIndex = 8;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Tìm kiếm và sắp xếp";
+            this.groupBox7.Text = "Tìm kiếm ";
             // 
             // panel14
             // 
@@ -475,10 +481,16 @@ namespace QuanLyPhuKienDienTu
             this.panel14.Controls.Add(this.label5);
             this.panel14.Controls.Add(this.TB_cbbGia);
             this.panel14.Controls.Add(this.TB_cbbTH);
+<<<<<<< HEAD
             this.panel14.Location = new System.Drawing.Point(10, 72);
             this.panel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(297, 135);
+=======
+            this.panel14.Location = new System.Drawing.Point(16, 63);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(396, 167);
+>>>>>>> 9217e3167f74b1244df10608ede62b0bab734e74
             this.panel14.TabIndex = 42;
             // 
             // TB_cbbLoai
@@ -564,16 +576,24 @@ namespace QuanLyPhuKienDienTu
             // TB_txtTimSP
             // 
             this.TB_txtTimSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.TB_txtTimSP.Location = new System.Drawing.Point(18, 43);
             this.TB_txtTimSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.TB_txtTimSP.Location = new System.Drawing.Point(19, 27);
+>>>>>>> 9217e3167f74b1244df10608ede62b0bab734e74
             this.TB_txtTimSP.Name = "TB_txtTimSP";
             this.TB_txtTimSP.Size = new System.Drawing.Size(206, 26);
             this.TB_txtTimSP.TabIndex = 41;
             // 
             // TB_ButtonTimSP
             // 
+<<<<<<< HEAD
             this.TB_ButtonTimSP.Location = new System.Drawing.Point(230, 43);
             this.TB_ButtonTimSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.TB_ButtonTimSP.Location = new System.Drawing.Point(301, 27);
+>>>>>>> 9217e3167f74b1244df10608ede62b0bab734e74
             this.TB_ButtonTimSP.Name = "TB_ButtonTimSP";
             this.TB_ButtonTimSP.Size = new System.Drawing.Size(70, 24);
             this.TB_ButtonTimSP.TabIndex = 40;
@@ -589,8 +609,12 @@ namespace QuanLyPhuKienDienTu
             this.groupBox6.Location = new System.Drawing.Point(3, 4);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox6.Name = "groupBox6";
+<<<<<<< HEAD
             this.groupBox6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox6.Size = new System.Drawing.Size(542, 271);
+=======
+            this.groupBox6.Size = new System.Drawing.Size(1154, 318);
+>>>>>>> 9217e3167f74b1244df10608ede62b0bab734e74
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Danh sách sản phẩm";
@@ -598,6 +622,7 @@ namespace QuanLyPhuKienDienTu
             // TB_dgvSanPham
             // 
             this.TB_dgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
             this.TB_dgvSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TB_dgvSanPham.Location = new System.Drawing.Point(2, 19);
             this.TB_dgvSanPham.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -606,6 +631,13 @@ namespace QuanLyPhuKienDienTu
             this.TB_dgvSanPham.RowTemplate.Height = 24;
             this.TB_dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TB_dgvSanPham.Size = new System.Drawing.Size(538, 250);
+=======
+            this.TB_dgvSanPham.Location = new System.Drawing.Point(13, 27);
+            this.TB_dgvSanPham.Name = "TB_dgvSanPham";
+            this.TB_dgvSanPham.RowHeadersWidth = 51;
+            this.TB_dgvSanPham.RowTemplate.Height = 24;
+            this.TB_dgvSanPham.Size = new System.Drawing.Size(1128, 272);
+>>>>>>> 9217e3167f74b1244df10608ede62b0bab734e74
             this.TB_dgvSanPham.TabIndex = 2;
             // 
             // groupBox5
@@ -627,11 +659,17 @@ namespace QuanLyPhuKienDienTu
             this.groupBox5.Controls.Add(this.TB_txtTenSP);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.groupBox5.Location = new System.Drawing.Point(3, 280);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox5.Size = new System.Drawing.Size(547, 416);
+=======
+            this.groupBox5.Location = new System.Drawing.Point(4, 324);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(729, 533);
+>>>>>>> 9217e3167f74b1244df10608ede62b0bab734e74
             this.groupBox5.TabIndex = 6;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thông tin sản phẩm chi tiết";
@@ -804,8 +842,12 @@ namespace QuanLyPhuKienDienTu
             this.panel5.Controls.Add(this.numericSoLuongBan);
             this.panel5.Controls.Add(this.TB_ButtonXoa);
             this.panel5.Controls.Add(this.TB_ButtonThem);
+<<<<<<< HEAD
             this.panel5.Location = new System.Drawing.Point(550, 214);
             this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+=======
+            this.panel5.Location = new System.Drawing.Point(6, 251);
+>>>>>>> 9217e3167f74b1244df10608ede62b0bab734e74
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(316, 41);
             this.panel5.TabIndex = 3;
@@ -874,8 +916,6 @@ namespace QuanLyPhuKienDienTu
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.TB_lvGioHang);
             this.panel4.Controls.Add(this.TB_ButtonThanhToan);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.numericDiscount);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Location = new System.Drawing.Point(871, 2);
             this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -973,6 +1013,7 @@ namespace QuanLyPhuKienDienTu
             this.TB_ButtonThanhToan.UseVisualStyleBackColor = true;
             this.TB_ButtonThanhToan.Click += new System.EventHandler(this.payButton_Click);
             // 
+<<<<<<< HEAD
             // label6
             // 
             this.label6.AutoSize = true;
@@ -992,6 +1033,8 @@ namespace QuanLyPhuKienDienTu
             this.numericDiscount.TabIndex = 10;
             this.numericDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+=======
+>>>>>>> 9217e3167f74b1244df10608ede62b0bab734e74
             // label8
             // 
             this.label8.AutoSize = true;
@@ -1963,8 +2006,6 @@ namespace QuanLyPhuKienDienTu
             this.panel8.Controls.Add(this.label40);
             this.panel8.Controls.Add(this.TN_listViewNhap);
             this.panel8.Controls.Add(this.TN_buttonThanhToan);
-            this.panel8.Controls.Add(this.label41);
-            this.panel8.Controls.Add(this.numericUpDown1);
             this.panel8.Controls.Add(this.label42);
             this.panel8.Location = new System.Drawing.Point(878, 5);
             this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -2062,6 +2103,7 @@ namespace QuanLyPhuKienDienTu
             this.TN_buttonThanhToan.UseVisualStyleBackColor = true;
             this.TN_buttonThanhToan.Click += new System.EventHandler(this.TN_buttonThanhToan_Click);
             // 
+<<<<<<< HEAD
             // label41
             // 
             this.label41.AutoSize = true;
@@ -2081,6 +2123,8 @@ namespace QuanLyPhuKienDienTu
             this.numericUpDown1.TabIndex = 10;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+=======
+>>>>>>> 9217e3167f74b1244df10608ede62b0bab734e74
             // label42
             // 
             this.label42.AutoSize = true;
@@ -2126,7 +2170,6 @@ namespace QuanLyPhuKienDienTu
             ((System.ComponentModel.ISupportInitialize)(this.numericSoLuongBan)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericDiscount)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
@@ -2148,7 +2191,6 @@ namespace QuanLyPhuKienDienTu
             ((System.ComponentModel.ISupportInitialize)(this.TN_dgvTH)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2172,10 +2214,8 @@ namespace QuanLyPhuKienDienTu
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TB_txtTongTien;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button TB_ButtonThanhToan;
         private System.Windows.Forms.NumericUpDown numericSoLuongBan;
-        private System.Windows.Forms.NumericUpDown numericDiscount;
         private System.Windows.Forms.Button TB_ButtonXoa;
         private System.Windows.Forms.Button TB_ButtonThem;
         private System.Windows.Forms.Panel panel4;
@@ -2199,8 +2239,6 @@ namespace QuanLyPhuKienDienTu
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Button TN_buttonThanhToan;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView TN_dgvTH;

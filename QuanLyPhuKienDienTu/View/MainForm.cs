@@ -21,16 +21,15 @@ namespace QuanLyPhuKienDienTu
 
         public ThuongHieu thuongHieu { get; set; }
 
+        static decimal TongTienHoaDonBan ;
+        static decimal TongTienHoaDonNhap;
+
         public MainForm()
         {
             InitializeComponent();
             setComboBox();
             show();
-            LoadSanPhamView();
-            foreach(KhachHang i in BLL.BLL_KhachHang.Instance.GetKhachHang())
-            {
-                
-            }    
+               
         }
 
         // Tab Bán Hàng
@@ -116,6 +115,7 @@ namespace QuanLyPhuKienDienTu
         {
             TB_dgvSanPham.DataSource = BLL.BLL_SanPham.Instance.GetSanPham_Views("All", "All", "All", "All");
             SetShow(TB_dgvSanPham);
+            LoadSanPhamView();
         }
 
         // Ẩn các column không cần thiết
@@ -182,27 +182,30 @@ namespace QuanLyPhuKienDienTu
 
             try
             {
-                int a = Convert.ToInt32(TB_dgvSanPham.CurrentRow.Cells["MaSanPham"].Value.ToString());
-                int index = check(a, TB_lvGioHang);
-                SanPham_View i = BLL.BLL_SanPham.Instance.GetSanPhamByID(a);
-                decimal TongTienHoaDon = 0;
-                int SoLuongBan = Convert.ToInt32(numericSoLuongBan.Value);
+                int MSP = Convert.ToInt32(TB_dgvSanPham.CurrentRow.Cells["MaSanPham"].Value.ToString());
+                
+                int index = check(MSP, TB_lvGioHang);
+                SanPham_View i = BLL.BLL_SanPham.Instance.GetSanPhamByID(MSP);
+                
+                int SLgThem = Convert.ToInt32(numericSoLuongBan.Value);
 
                 if (index != -100)
                 {
 
-                    int SLgSau = 0;
+                    
 
                     int SLgTruoc = Convert.ToInt32(TB_lvGioHang.Items[index].SubItems[1].Text);
 
-                    SLgSau = SLgTruoc + Convert.ToInt32(numericSoLuongBan.Value);
+                    int SLgSau = SLgTruoc + SLgThem;
 
 
-                    Decimal GiaBan = Convert.ToDecimal(TB_lvGioHang.Items[index].SubItems[2].Text);
+                    
                     TB_lvGioHang.Items[index].SubItems[1].Text = SLgSau.ToString();
-                    TB_lvGioHang.Items[index].SubItems[3].Text = ((SLgSau * GiaBan).ToString());
-                    TongTienHoaDon = Convert.ToDecimal(TB_txtTongTien.Text) + (SLgSau * GiaBan);
-                    TB_txtTongTien.Text = TongTienHoaDon.ToString();
+                    TB_lvGioHang.Items[index].SubItems[3].Text = ((SLgSau * i.GiaBan).ToString());
+
+                    TongTienHoaDonBan += (SLgThem * i.GiaBan);
+                    TB_txtTongTien.Text = TongTienHoaDonBan.ToString();
+
                 }
                 else
                 {
@@ -212,12 +215,12 @@ namespace QuanLyPhuKienDienTu
 
                     listView.SubItems.Add(numericSoLuongBan.Value.ToString());
                     listView.SubItems.Add(i.GiaBan.ToString());
-                    listView.SubItems.Add((i.GiaBan * SoLuongBan).ToString());
+                    listView.SubItems.Add((i.GiaBan * SLgThem).ToString());
 
-                    TongTienHoaDon += (Decimal)(i.GiaBan * SoLuongBan);
+                    TongTienHoaDonBan += (i.GiaBan * SLgThem);
 
                     TB_lvGioHang.Items.Add(listView);
-                    TB_txtTongTien.Text = TongTienHoaDon.ToString();
+                    TB_txtTongTien.Text = TongTienHoaDonBan.ToString();
                 }
             }
             catch (Exception)
@@ -233,22 +236,24 @@ namespace QuanLyPhuKienDienTu
 
            
                 string tensp = TB_lvGioHang.SelectedItems[0].SubItems[0].Text;
-                int SLgSau = 0;
+                int SLgXoa = Convert.ToInt32(numericSoLuongBan.Value);
                 int SLgTruoc = Convert.ToInt32(TB_lvGioHang.SelectedItems[0].SubItems[1].Text);
-                SLgSau = SLgTruoc - Convert.ToInt32(numericSoLuongBan.Value);
+                int SLgSau = SLgTruoc - SLgXoa;
+
                 if (SLgSau < 1)
                 {
-                    Decimal TongTienHoaDon = Convert.ToDecimal(TB_txtTongTien.Text) - Convert.ToDecimal(TB_lvGioHang.SelectedItems[0].SubItems[3].Text);
+                    TongTienHoaDonBan  -= Convert.ToDecimal(TB_lvGioHang.SelectedItems[0].SubItems[3].Text);
                     TB_lvGioHang.SelectedItems[0].Remove();
-                    TB_txtTongTien.Text = TongTienHoaDon.ToString();
+                    TB_txtTongTien.Text = TongTienHoaDonBan.ToString();
+                    
                 }
                 else
                 {
                     Decimal GiaBan = Convert.ToDecimal(TB_lvGioHang.SelectedItems[0].SubItems[2].Text);
                     TB_lvGioHang.SelectedItems[0].SubItems[1].Text = SLgSau.ToString();
                     TB_lvGioHang.SelectedItems[0].SubItems[3].Text = ((SLgSau * GiaBan).ToString());
-                    Decimal TongTienHoaDon = Convert.ToDecimal(TB_txtTongTien.Text) - (SLgSau * GiaBan);
-                    TB_txtTongTien.Text = TongTienHoaDon.ToString();
+                    TongTienHoaDonBan -= (GiaBan * SLgXoa);
+                    TB_txtTongTien.Text = TongTienHoaDonBan.ToString();
                 }
             
             
@@ -271,7 +276,38 @@ namespace QuanLyPhuKienDienTu
 
         private void buttonThem_Click(object sender, EventArgs e)
         {
-            AddListViewBan();
+            try
+            {
+                int a = Convert.ToInt32(TB_dgvSanPham.CurrentRow.Cells["MaSanPham"].Value.ToString());
+                int index = check(a, TB_lvGioHang);
+                int slgtonkho = Convert.ToInt32(TB_dgvSanPham.CurrentRow.Cells["SoLuongTonKho"].Value);
+
+
+                if (index != -100)
+                {
+                    int slgban = Convert.ToInt32(TB_lvGioHang.Items[index].SubItems[1].Text);
+                    if (slgtonkho >= slgban + numericSoLuongBan.Value)
+                    {
+                        AddListViewBan();
+                    }
+                    else
+                        MessageBox.Show("Số lượng trong kho ít hơn số lượng sản phẩm được chọn, vui lòng kiểm tra lại!");
+                }
+                else
+                {
+                    if (slgtonkho >= numericSoLuongBan.Value)
+                    {
+                        AddListViewBan();
+                    }
+                    else
+                        MessageBox.Show("Số lượng trong kho ít hơn số lượng sản phẩm được chọn, vui lòng kiểm tra lại!");
+                }
+            } 
+            catch(Exception)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại sau!");
+            }
+            
         }
 
         private void buttonXoa_Click(object sender, EventArgs e)
@@ -298,21 +334,23 @@ namespace QuanLyPhuKienDienTu
                     {
                         SanPham_View y = new SanPham_View();
                         y = (SanPham_View)TB_lvGioHang.Items[i.Index].Tag;
-                        int slg = 0;
-                        slg = Convert.ToInt32(TB_lvGioHang.Items[i.Index].SubItems[1].Text);
+                        
+                        int slg = Convert.ToInt32(TB_lvGioHang.Items[i.Index].SubItems[1].Text);
+                        int slgSauGiaoDich = y.SoLuongTonKho - slg;
 
                         BLL.BLL_HoaDonBanChiTiet.Instance.AddHoaDonBanChiTiet(mhd, y.MaSanPham, slg, "");
+                        BLL.BLL_SanPham.Instance.SanPhamSauGiaoDich(y.MaSanPham, slgSauGiaoDich);
+                        show();
                     }
-                    TB_lvGioHang.Clear();
+                    TB_lvGioHang.Items.Clear();
+
                     MessageBox.Show("     ♥♥♥   \nThanh toán thành công ");
                 }
                 else
                     MessageBox.Show("       Đã xảy ra lỗi!\n Hãy chọn đầy đủ sản phẩm và khách hàng rồi thử lại ♥♥♥!");
-                
             }
             catch(Exception )
             {
-                
                 MessageBox.Show("       Đã xảy ra lỗi!\n Hãy chọn đầy đủ sản phẩm và khách hàng rồi thử lại ♥♥♥!");
             }
             
@@ -516,24 +554,24 @@ namespace QuanLyPhuKienDienTu
                 int a = Convert.ToInt32(TN_dgvTH.CurrentRow.Cells["MaSanPham"].Value);
                 int index = check(a, TN_listViewNhap);
                 SanPham_View i = BLL.BLL_SanPham.Instance.GetSanPhamByID(a);
-                decimal TongTienHoaDon = 0;
+                
                 int SoLuongNhap = Convert.ToInt32(numericUpDownNhap.Value);
 
                 if (index != -100)
                 {
 
-                    int SLgSau = 0;
+                    
 
                     int SLgTruoc = Convert.ToInt32(TN_listViewNhap.Items[index].SubItems[1].Text);
 
-                    SLgSau = SLgTruoc + Convert.ToInt32(numericUpDownNhap.Value);
+                   int SLgSau = SLgTruoc + Convert.ToInt32(numericUpDownNhap.Value);
 
 
                     Decimal GiaNhap = Convert.ToDecimal(TN_listViewNhap.Items[index].SubItems[2].Text);
                     TN_listViewNhap.Items[index].SubItems[1].Text = SLgSau.ToString();
                     TN_listViewNhap.Items[index].SubItems[3].Text = ((SLgSau * GiaNhap).ToString());
-                    TongTienHoaDon = Convert.ToDecimal(TN_txtTongGia.Text) + (SLgSau * GiaNhap);
-                    TN_txtTongGia.Text = TongTienHoaDon.ToString();
+                    TongTienHoaDonNhap  += (SoLuongNhap * GiaNhap);
+                    TN_txtTongGia.Text = TongTienHoaDonNhap.ToString();
                 }
                 else
                 {
@@ -542,13 +580,13 @@ namespace QuanLyPhuKienDienTu
                     listView.Tag = i;
 
                     listView.SubItems.Add(numericUpDownNhap.Value.ToString());
-                    listView.SubItems.Add(i.GiaBan.ToString());
-                    listView.SubItems.Add((i.GiaBan * SoLuongNhap).ToString());
+                    listView.SubItems.Add(i.GiaNhap.ToString());
+                    listView.SubItems.Add((i.GiaNhap * SoLuongNhap).ToString());
 
-                    TongTienHoaDon += (Decimal)(i.GiaBan * SoLuongNhap);
+                    TongTienHoaDonNhap += (SoLuongNhap * i.GiaNhap);
+                    TN_txtTongGia.Text = TongTienHoaDonNhap.ToString();
 
                     TN_listViewNhap.Items.Add(listView);
-                    TN_txtTongGia.Text = TongTienHoaDon.ToString();
                 }
             }
             catch(Exception)
@@ -563,22 +601,22 @@ namespace QuanLyPhuKienDienTu
         public void DeleteListViewNhap()
         {
             string tensp = TN_listViewNhap.SelectedItems[0].SubItems[0].Text;
-            int SLgSau = 0;
+            int SlgXoa = Convert.ToInt32(numericUpDownNhap.Value);
             int SLgTruoc = Convert.ToInt32(TN_listViewNhap.SelectedItems[0].SubItems[1].Text);
-            SLgSau = SLgTruoc - Convert.ToInt32(numericUpDownNhap.Value);
+            int SLgSau = SLgTruoc - SlgXoa;
             if (SLgSau < 1)
             {
-                Decimal TongTienHoaDon = Convert.ToDecimal(TN_txtTongGia.Text) - Convert.ToDecimal(TN_listViewNhap.SelectedItems[0].SubItems[3].Text);
+                 TongTienHoaDonNhap -= Convert.ToDecimal(TN_listViewNhap.SelectedItems[0].SubItems[3].Text);
                 TN_listViewNhap.SelectedItems[0].Remove();
-                TN_txtTongGia.Text = TongTienHoaDon.ToString();
+                TN_txtTongGia.Text = TongTienHoaDonNhap.ToString();
             }
             else
             {
                 Decimal GiaBan = Convert.ToDecimal(TN_listViewNhap.SelectedItems[0].SubItems[2].Text);
                 TN_listViewNhap.SelectedItems[0].SubItems[1].Text = SLgSau.ToString();
                 TN_listViewNhap.SelectedItems[0].SubItems[3].Text = ((SLgSau * GiaBan).ToString());
-                Decimal TongTienHoaDon = Convert.ToDecimal(TN_txtTongGia.Text) - (SLgSau * GiaBan);
-                TN_txtTongGia.Text = TongTienHoaDon.ToString();
+                TongTienHoaDonNhap -=  (SlgXoa * GiaBan);
+                TN_txtTongGia.Text = TongTienHoaDonNhap.ToString();
             }
 
         }
@@ -623,11 +661,22 @@ namespace QuanLyPhuKienDienTu
         {
             try
             {
+                buttonQuayLai_Click(sender, e);
                 FormThuongHieu fTH = new FormThuongHieu();
                 fTH.ShowDialog();
                 int max = BLL.BLL_ThuongHieu.Instance.GetListThuongHieu().Count;
-                thuongHieu = BLL.BLL_ThuongHieu.Instance.GetThuongHieuByID(max);
-                LoadThuongHieu(thuongHieu);
+                thuongHieu = BLL.BLL_ThuongHieu.Instance.GetThuongHieuByID(max);;
+                if (thuongHieu != null)
+                {
+                    LoadThuongHieu(thuongHieu);
+                    TN_dgvTH.DataSource = BLL.BLL_SanPham.Instance.GetSanPham_Views("All", "All", thuongHieu.TenThuongHieu, "All");
+                    LoadSanPhamView3();
+                    SetShow(TN_dgvTH);
+                }
+                else
+                {
+                    MessageBox.Show("Đã xảy ra lỗi, vui lòng thêm thương hiệu mới rồi thử lại ♥♥♥");
+                }
             }
             catch (Exception)
             {
@@ -646,6 +695,7 @@ namespace QuanLyPhuKienDienTu
                 TN_txtTongGia.Text = "";
                 TN_listViewNhap.Items.Clear();
                 thuongHieu = null;
+                TongTienHoaDonNhap = 0;
 
             }
             catch (Exception)
@@ -688,10 +738,11 @@ namespace QuanLyPhuKienDienTu
                     {
                         SanPham_View y = new SanPham_View();
                         y = (SanPham_View)TN_listViewNhap.Items[i.Index].Tag;
-                        int slg = 0;
-                        slg = Convert.ToInt32(TN_listViewNhap.Items[i.Index].SubItems[1].Text);
-
+                        
+                        int slg = Convert.ToInt32(TN_listViewNhap.Items[i.Index].SubItems[1].Text);
+                        int slgSauGiaoDich = y.SoLuongTonKho + slg;
                         BLL.BLL_HoaDonNhapChiTiet.Instance.AddHoaDonNhapChiTiet(mhd, y.MaSanPham, slg);
+                        BLL.BLL_SanPham.Instance.SanPhamSauGiaoDich(y.MaSanPham, slgSauGiaoDich);
                     }
                     MessageBox.Show("Thanh toán thành công! ♥♥♥");
                     buttonQuayLai_Click(sender, e);

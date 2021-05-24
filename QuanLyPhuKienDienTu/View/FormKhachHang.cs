@@ -24,6 +24,7 @@ namespace QuanLyPhuKienDienTu.View
         public void loadDL()
         {
             dgvKhachHang.DataSource = BLL_KhachHang.Instance.GetKhachHang();
+            Process.InvisibleAttributes(dgvKhachHang, new object[] { "MaKhachHang" });
             var list = dgvKhachHang.DataSource;
             txtMaKH.DataBindings.Clear();
             txtMaKH.DataBindings.Add("Text", list, "MaKhachHang");
@@ -93,16 +94,17 @@ namespace QuanLyPhuKienDienTu.View
             DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(dr == DialogResult.Yes)
             {
-                foreach (DataGridViewRow i in r)
+                /*foreach (DataGridViewRow i in r)
+                {*/
+                    int makh = (int)dgvKhachHang.SelectedRows[0].Cells["MaKhachHang"].Value;
+                if (BLL_KhachHang.Instance.XoaKhachHang(makh))
                 {
-                    int makh = (int)i.Cells["MaKhachHang"].Value;
-                    if (BLL_KhachHang.Instance.XoaKhachHang(makh))
-                    {
-                        MessageBox.Show("Xóa thành công !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                        MessageBox.Show("Xóa không thành công !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }    
+                    MessageBox.Show("Xóa thành công !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             loadDL();
         }
