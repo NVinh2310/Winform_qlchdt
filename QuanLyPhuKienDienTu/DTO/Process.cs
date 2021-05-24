@@ -16,6 +16,33 @@ namespace QuanLyPhuKienDienTu.DTO
             return false;
         }
 
+        public static string ToPhone(string text)
+        {
+            if (IsEmpty(text))
+            {
+                Exception e = new Exception("Vui lòng nhập đầy đủ thông tin");
+                throw e;
+            }
+            if (!isNumber(text))
+            {
+                Exception e = new Exception("So dien thoai khong hop le");
+                throw e;
+            }
+            return text;
+        }
+
+        public static bool isNumber(string text)
+        {
+            foreach (char c in text)
+            {
+                if (!Char.IsDigit(c))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public static void InvisibleAttributes(DataGridView dataView, object[] parameters = null)
         {
             foreach (string item in parameters)

@@ -185,5 +185,31 @@ namespace QuanLyPhuKienDienTu.DAO
                 return true;
             }
         }
+
+        public bool XoaTaiKhoanVoiIDNhanVien(int idNhanVien)
+        {
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                try
+                {
+                    var idAccount = from tk in db.TaiKhoans
+                                    where tk.MaNhanVien == idNhanVien
+                                    select tk;
+                    
+                    foreach(var item in idAccount)
+                    {
+                        TaiKhoan taikhoan = db.TaiKhoans.Find(item.MaTaiKhoan);
+                        db.TaiKhoans.Remove(taikhoan);
+                    }
+                    
+                    db.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
     }
 }

@@ -16,8 +16,10 @@ namespace QuanLyPhuKienDienTu
     public partial class MainForm : Form
     {
         public KhachHang khachHang { get; set; }
-        public List<SanPham> listBanSanPham { get; set; }
-        public List<SanPham> listNhapSanPham { get; set; }
+
+        public KhachHang khachHang2 { get; set; }
+
+        public ThuongHieu thuongHieu { get; set; }
 
         public MainForm()
         {
@@ -78,6 +80,30 @@ namespace QuanLyPhuKienDienTu
                 });
                 TN_cbbTimTH.AutoCompleteCustomSource.Add(i.TenThuongHieu);
             }
+            int t = 1;
+            foreach(KhachHang i in BLL.BLL_KhachHang.Instance.GetKhachHang())
+            {
+                
+                TB_cbbSDT.Items.Add(new CBBItem
+                {
+                    Value = t,
+                    Text= i.SoDienThoai
+                });
+                t++;
+                TB_cbbSDT.AutoCompleteCustomSource.Add(i.SoDienThoai);
+            }
+            t = 1;
+            foreach (KhachHang i in BLL.BLL_KhachHang.Instance.GetKhachHang())
+            {
+
+                TBH_txtSDT.Items.Add(new CBBItem
+                {
+                    Value = t,
+                    Text = i.SoDienThoai
+                });
+                t++;
+                TBH_txtSDT.AutoCompleteCustomSource.Add(i.SoDienThoai);
+            }
 
             TB_cbbTH.SelectedIndex = 0;
             TB_cbbGia.SelectedIndex = 0;
@@ -89,16 +115,16 @@ namespace QuanLyPhuKienDienTu
         public void show()
         {
             TB_dgvSanPham.DataSource = BLL.BLL_SanPham.Instance.GetSanPham_Views("All", "All", "All", "All");
-            SetShow();
+            SetShow(TB_dgvSanPham);
         }
 
         // Ẩn các column không cần thiết
-        public void SetShow()
+        public void SetShow(DataGridView i)
         {
-            TB_dgvSanPham.Columns["MoTa"].Visible = false;
-            TB_dgvSanPham.Columns["MaSanPham"].Visible = false;
-            TB_dgvSanPham.Columns["MauSac"].Visible = false;
-            TB_dgvSanPham.Columns["ThoiLuongBaoHanh"].Visible = false;
+            i.Columns["MoTa"].Visible = false;
+            i.Columns["MaSanPham"].Visible = false;
+            i.Columns["MauSac"].Visible = false;
+            i.Columns["ThoiLuongBaoHanh"].Visible = false;
         }
 
 
@@ -113,6 +139,7 @@ namespace QuanLyPhuKienDienTu
         // Load Thông tin sản phẩm
         public void LoadSanPhamView()
         {
+            TB_dgvSanPham.Columns["GiaNhap"].Visible = false;
             TB_txtTenSP.DataBindings.Clear();
             TB_txtTenSP.DataBindings.Add(new Binding("Text", TB_dgvSanPham.DataSource, "TenSanPham"));
 
@@ -153,42 +180,49 @@ namespace QuanLyPhuKienDienTu
         public void AddListViewBan()
         {
 
-            int a = Convert.ToInt32(TB_dgvSanPham.CurrentRow.Cells["MaSanPham"].Value.ToString());
-            int index = check(a, TB_lvGioHang);
-            SanPham_View i = BLL.BLL_SanPham.Instance.GetSanPhamByID(a);
-            decimal TongTienHoaDon = 0;
-            int SoLuongBan = Convert.ToInt32(numericSoLuongBan.Value);
-
-            if (index != -100)
+            try
             {
+                int a = Convert.ToInt32(TB_dgvSanPham.CurrentRow.Cells["MaSanPham"].Value.ToString());
+                int index = check(a, TB_lvGioHang);
+                SanPham_View i = BLL.BLL_SanPham.Instance.GetSanPhamByID(a);
+                decimal TongTienHoaDon = 0;
+                int SoLuongBan = Convert.ToInt32(numericSoLuongBan.Value);
 
-                int SLgSau = 0;
+                if (index != -100)
+                {
 
-                int SLgTruoc = Convert.ToInt32(TB_lvGioHang.Items[index].SubItems[1].Text);
+                    int SLgSau = 0;
 
-                SLgSau = SLgTruoc + Convert.ToInt32(numericSoLuongBan.Value);
+                    int SLgTruoc = Convert.ToInt32(TB_lvGioHang.Items[index].SubItems[1].Text);
+
+                    SLgSau = SLgTruoc + Convert.ToInt32(numericSoLuongBan.Value);
 
 
-                Decimal GiaBan = Convert.ToDecimal(TB_lvGioHang.Items[index].SubItems[2].Text);
-                TB_lvGioHang.Items[index].SubItems[1].Text = SLgSau.ToString();
-                TB_lvGioHang.Items[index].SubItems[3].Text = ((SLgSau * GiaBan).ToString());
-                TongTienHoaDon = Convert.ToDecimal(TB_txtTongTien.Text) + (SLgSau * GiaBan);
-                TB_txtTongTien.Text = TongTienHoaDon.ToString();
+                    Decimal GiaBan = Convert.ToDecimal(TB_lvGioHang.Items[index].SubItems[2].Text);
+                    TB_lvGioHang.Items[index].SubItems[1].Text = SLgSau.ToString();
+                    TB_lvGioHang.Items[index].SubItems[3].Text = ((SLgSau * GiaBan).ToString());
+                    TongTienHoaDon = Convert.ToDecimal(TB_txtTongTien.Text) + (SLgSau * GiaBan);
+                    TB_txtTongTien.Text = TongTienHoaDon.ToString();
+                }
+                else
+                {
+                    ListViewItem listView = new ListViewItem(i.TenSanPham);
+
+                    listView.Tag = i;
+
+                    listView.SubItems.Add(numericSoLuongBan.Value.ToString());
+                    listView.SubItems.Add(i.GiaBan.ToString());
+                    listView.SubItems.Add((i.GiaBan * SoLuongBan).ToString());
+
+                    TongTienHoaDon += (Decimal)(i.GiaBan * SoLuongBan);
+
+                    TB_lvGioHang.Items.Add(listView);
+                    TB_txtTongTien.Text = TongTienHoaDon.ToString();
+                }
             }
-            else
+            catch (Exception)
             {
-                ListViewItem listView = new ListViewItem(i.TenSanPham);
-
-                listView.Tag = i;
-
-                listView.SubItems.Add(numericSoLuongBan.Value.ToString());
-                listView.SubItems.Add(i.GiaBan.ToString());
-                listView.SubItems.Add((i.GiaBan * SoLuongBan).ToString());
-
-                TongTienHoaDon += (Decimal)(i.GiaBan * SoLuongBan);
-
-                TB_lvGioHang.Items.Add(listView);
-                TB_txtTongTien.Text = TongTienHoaDon.ToString();
+                MessageBox.Show("Hệ thống chưa có sản phẩm nào, vui lòng thêm sản phẩm mới rồi thử lại ♥♥♥");
             }
 
         }
@@ -196,24 +230,28 @@ namespace QuanLyPhuKienDienTu
         // Xóa sản phẩm khỏi listView Bán
         public void DeleteListViewBan()
         {
-            string tensp = TB_lvGioHang.SelectedItems[0].SubItems[0].Text;
-            int SLgSau = 0;
-            int SLgTruoc = Convert.ToInt32(TB_lvGioHang.SelectedItems[0].SubItems[1].Text);
-            SLgSau = SLgTruoc - Convert.ToInt32(numericSoLuongBan.Value);
-            if (SLgSau < 1)
-            {
-                Decimal TongTienHoaDon = Convert.ToDecimal(TB_txtTongTien.Text) - Convert.ToDecimal(TB_lvGioHang.SelectedItems[0].SubItems[3].Text);
-                TB_lvGioHang.SelectedItems[0].Remove();
-                TB_txtTongTien.Text = TongTienHoaDon.ToString();
-            }
-            else
-            {
-                Decimal GiaBan = Convert.ToDecimal(TB_lvGioHang.SelectedItems[0].SubItems[2].Text);
-                TB_lvGioHang.SelectedItems[0].SubItems[1].Text = SLgSau.ToString();
-                TB_lvGioHang.SelectedItems[0].SubItems[3].Text = ((SLgSau * GiaBan).ToString());
-                Decimal TongTienHoaDon = Convert.ToDecimal(TB_txtTongTien.Text) - (SLgSau * GiaBan);
-                TB_txtTongTien.Text = TongTienHoaDon.ToString();
-            }
+
+           
+                string tensp = TB_lvGioHang.SelectedItems[0].SubItems[0].Text;
+                int SLgSau = 0;
+                int SLgTruoc = Convert.ToInt32(TB_lvGioHang.SelectedItems[0].SubItems[1].Text);
+                SLgSau = SLgTruoc - Convert.ToInt32(numericSoLuongBan.Value);
+                if (SLgSau < 1)
+                {
+                    Decimal TongTienHoaDon = Convert.ToDecimal(TB_txtTongTien.Text) - Convert.ToDecimal(TB_lvGioHang.SelectedItems[0].SubItems[3].Text);
+                    TB_lvGioHang.SelectedItems[0].Remove();
+                    TB_txtTongTien.Text = TongTienHoaDon.ToString();
+                }
+                else
+                {
+                    Decimal GiaBan = Convert.ToDecimal(TB_lvGioHang.SelectedItems[0].SubItems[2].Text);
+                    TB_lvGioHang.SelectedItems[0].SubItems[1].Text = SLgSau.ToString();
+                    TB_lvGioHang.SelectedItems[0].SubItems[3].Text = ((SLgSau * GiaBan).ToString());
+                    Decimal TongTienHoaDon = Convert.ToDecimal(TB_txtTongTien.Text) - (SLgSau * GiaBan);
+                    TB_txtTongTien.Text = TongTienHoaDon.ToString();
+                }
+            
+            
 
         }
 
@@ -227,7 +265,7 @@ namespace QuanLyPhuKienDienTu
             string gia = TB_cbbGia.SelectedItem.ToString();
 
             TB_dgvSanPham.DataSource = BLL.BLL_SanPham.Instance.GetSanPham_Views(TB_txtTimSP.Text, loai, thuonghieu, gia);
-            SetShow();
+            SetShow(TB_dgvSanPham);
             LoadSanPhamView();
         }
 
@@ -246,40 +284,71 @@ namespace QuanLyPhuKienDienTu
 
         private void payButton_Click(object sender, EventArgs e)
         {
-
-            if (khachHang.TenKhachHang != null)
+            try
             {
-                DateTime date = dateTimePickerNgayBan.Value;
-                BLL.BLL_HoaDonBan.Instance.AddHoaDonBan(khachHang.MaKhachHang, date);
-                int mhd = 0;
-                mhd = BLL.BLL_HoaDonBan.Instance.GetMaHoaDonMax();
 
-                foreach (ListViewItem i in TB_lvGioHang.Items)
+                if (khachHang != null && TB_lvGioHang.Items.Count != 0)
                 {
-                    SanPham_View y = new SanPham_View();
-                    y = (SanPham_View)TB_lvGioHang.Items[i.Index].Tag;
-                    int slg = 0;
-                    slg = Convert.ToInt32(TB_lvGioHang.Items[i.Index].SubItems[1].Text);
+                    DateTime date = dateTimePickerNgayBan.Value;
+                    BLL.BLL_HoaDonBan.Instance.AddHoaDonBan(khachHang.MaKhachHang, date);
+                    int mhd = 0;
+                    mhd = BLL.BLL_HoaDonBan.Instance.GetMaHoaDonMax();
 
-                    BLL.BLL_HoaDonBanChiTiet.Instance.AddHoaDonBanChiTiet(mhd, y.MaSanPham, slg, "");
+                    foreach (ListViewItem i in TB_lvGioHang.Items)
+                    {
+                        SanPham_View y = new SanPham_View();
+                        y = (SanPham_View)TB_lvGioHang.Items[i.Index].Tag;
+                        int slg = 0;
+                        slg = Convert.ToInt32(TB_lvGioHang.Items[i.Index].SubItems[1].Text);
+
+                        BLL.BLL_HoaDonBanChiTiet.Instance.AddHoaDonBanChiTiet(mhd, y.MaSanPham, slg, "");
+                    }
+                    TB_lvGioHang.Clear();
+                    MessageBox.Show("     ♥♥♥   \nThanh toán thành công ");
                 }
+                else
+                    MessageBox.Show("       Đã xảy ra lỗi!\n Hãy chọn đầy đủ sản phẩm và khách hàng rồi thử lại ♥♥♥!");
+                
             }
-
+            catch(Exception )
+            {
+                
+                MessageBox.Show("       Đã xảy ra lỗi!\n Hãy chọn đầy đủ sản phẩm và khách hàng rồi thử lại ♥♥♥!");
+            }
+            
         }
 
         private void TB_ButtonTimSDT_Click(object sender, EventArgs e)
         {
-            khachHang = BLL.BLL_KhachHang.Instance.GetKhachHangBySDT(TB_cbbSDT.Text);
-            LoadKhachHang(khachHang);
+            try
+            {
+
+                khachHang = BLL.BLL_KhachHang.Instance.GetKhachHangBySDT(TB_cbbSDT.Text);
+                if (khachHang != null)
+                    LoadKhachHang(khachHang);
+                else
+                    MessageBox.Show("Khách hàng chưa tồn tại!\nVui lòng thêm mới khách hàng");
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại");
+            }
         }
 
         private void TB_ButtonKHMoi_Click(object sender, EventArgs e)
         {
-            FormKhachHang fKH = new FormKhachHang();
-            fKH.ShowDialog();
-            int mkhMax = BLL.BLL_KhachHang.Instance.GetMaKhachHangMax();
-            khachHang = BLL.BLL_KhachHang.Instance.GetKhachHangByID(mkhMax);
-            LoadKhachHang(khachHang);
+            try
+            {
+                FormKhachHang fKH = new FormKhachHang();
+                fKH.ShowDialog();
+                int mkhMax = BLL.BLL_KhachHang.Instance.GetMaKhachHangMax();
+                khachHang = BLL.BLL_KhachHang.Instance.GetKhachHangByID(mkhMax);
+                LoadKhachHang(khachHang);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại ");
+            }
         }
         #endregion
         #endregion
@@ -324,25 +393,62 @@ namespace QuanLyPhuKienDienTu
         // Tìm Khách hàng bằng số điện thoại
         private void TBH_buttonTimSDT_Click(object sender, EventArgs e)
         {
-            khachHang = BLL.BLL_KhachHang.Instance.GetKhachHangBySDT(TBH_txtSDT.Text);
-            LoadKhachHang2(khachHang);
-            TBH_dgvSanPham.DataSource = DAO.DAO_HoaDonBanChiTiet.Instance.GetSP(khachHang.MaKhachHang);
+            try
+            {
+                khachHang2 = BLL.BLL_KhachHang.Instance.GetKhachHangBySDT(TBH_txtSDT.Text);
+                if (khachHang2!= null)
+                {
+                    LoadKhachHang2(khachHang2);
+                    TBH_dgvSanPham.DataSource = DAO.DAO_HoaDonBanChiTiet.Instance.GetSP(khachHang2.MaKhachHang);
+                    TBH_dgvSanPham_CellMouseClick(sender, e);
+                }    
+                else
+                {
+                    MessageBox.Show("Khách hàng chưa tồn tại, vui lòng thêm mới ♥♥♥");
+                }    
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại");
+            }
         }
 
         // Tìm Hóa đơn theo ngày
         private void TBH_buttonTimHD_Click(object sender, EventArgs e)
         {
-
-            MessageBox.Show(khachHang.TenKhachHang);
-            TBH_dgvSanPham.DataSource = BLL.BLL_HoaDonBanChiTiet.Instance.GetSPKhachDaMuaTheoNgay(khachHang.MaKhachHang, TBH_dtpNgayMua.Value);
+            try
+            {
+                if(khachHang2!= null)
+                {
+                    TBH_dgvSanPham.DataSource = BLL.BLL_HoaDonBanChiTiet.Instance.GetSPKhachDaMuaTheoNgay(khachHang2.MaKhachHang, TBH_dtpNgayMua.Value);
+                    TBH_dgvSanPham_CellMouseClick(sender, e);
+                }    
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn khách hàng trước! ♥♥♥");
+                }    
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại");
+            }
         }
 
         // Lưu thông tin bảo hành
         private void saveButton_Click(object sender, EventArgs e)
         {
-            int mhdct = Convert.ToInt32(TBH_dgvSanPham.CurrentRow.Cells["MaHoaDonBanChiTiet"].Value.ToString());
-            string gc = TBH_rtxtGhiChu.Text;
-            BLL.BLL_HoaDonBanChiTiet.Instance.BaoHanhSanPham(mhdct, gc);
+            try
+            {
+                int mhdct = Convert.ToInt32(TBH_dgvSanPham.CurrentRow.Cells["MaHoaDonBanChiTiet"].Value.ToString());
+                string gc = TBH_rtxtGhiChu.Text;
+                BLL.BLL_HoaDonBanChiTiet.Instance.BaoHanhSanPham(mhdct, gc);
+                MessageBox.Show("Đã Lưu thành công");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại");
+            }
+            
         }
         // Hủy thông tin bảo hành
         private void TBH_buttonHuy_Click(object sender, EventArgs e)
@@ -351,9 +457,17 @@ namespace QuanLyPhuKienDienTu
         }
 
         // Chọn sản phẩm cần bảo hành
-        private void TBH_dgvSanPham_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void TBH_dgvSanPham_CellMouseClick(object sender, EventArgs e)
         {
-            LoadSanPhamView2();
+            try
+            {
+                LoadSanPhamView2();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại");
+            }
+            
         }
         #endregion
         #endregion
@@ -391,48 +505,57 @@ namespace QuanLyPhuKienDienTu
 
             TN_txtGiaNhap.DataBindings.Clear();
             TN_txtGiaNhap.DataBindings.Add(new Binding("Text", TN_dgvTH.DataSource, "GiaNhap"));
+            
         }
 
         // Thêm sản phẩm vào list view nhập
         public void AddListViewNhap()
         {
-            int a = Convert.ToInt32(TN_dgvTH.CurrentRow.Cells["MaSanPham"].Value);
-            int index = check(a, TN_listViewNhap);
-            SanPham_View i = BLL.BLL_SanPham.Instance.GetSanPhamByID(a);
-            decimal TongTienHoaDon = 0;
-            int SoLuongNhap = Convert.ToInt32(numericUpDownNhap.Value);
-
-            if (index != -100)
+            try
             {
+                int a = Convert.ToInt32(TN_dgvTH.CurrentRow.Cells["MaSanPham"].Value);
+                int index = check(a, TN_listViewNhap);
+                SanPham_View i = BLL.BLL_SanPham.Instance.GetSanPhamByID(a);
+                decimal TongTienHoaDon = 0;
+                int SoLuongNhap = Convert.ToInt32(numericUpDownNhap.Value);
 
-                int SLgSau = 0;
+                if (index != -100)
+                {
 
-                int SLgTruoc = Convert.ToInt32(TN_listViewNhap.Items[index].SubItems[1].Text);
+                    int SLgSau = 0;
 
-                SLgSau = SLgTruoc + Convert.ToInt32(numericUpDownNhap.Value);
+                    int SLgTruoc = Convert.ToInt32(TN_listViewNhap.Items[index].SubItems[1].Text);
+
+                    SLgSau = SLgTruoc + Convert.ToInt32(numericUpDownNhap.Value);
 
 
-                Decimal GiaNhap = Convert.ToDecimal(TN_listViewNhap.Items[index].SubItems[2].Text);
-                TN_listViewNhap.Items[index].SubItems[1].Text = SLgSau.ToString();
-                TN_listViewNhap.Items[index].SubItems[3].Text = ((SLgSau * GiaNhap).ToString());
-                TongTienHoaDon = Convert.ToDecimal(TN_txtTongGia.Text) + (SLgSau * GiaNhap);
-                TN_txtTongGia.Text = TongTienHoaDon.ToString();
+                    Decimal GiaNhap = Convert.ToDecimal(TN_listViewNhap.Items[index].SubItems[2].Text);
+                    TN_listViewNhap.Items[index].SubItems[1].Text = SLgSau.ToString();
+                    TN_listViewNhap.Items[index].SubItems[3].Text = ((SLgSau * GiaNhap).ToString());
+                    TongTienHoaDon = Convert.ToDecimal(TN_txtTongGia.Text) + (SLgSau * GiaNhap);
+                    TN_txtTongGia.Text = TongTienHoaDon.ToString();
+                }
+                else
+                {
+                    ListViewItem listView = new ListViewItem(i.TenSanPham);
+
+                    listView.Tag = i;
+
+                    listView.SubItems.Add(numericUpDownNhap.Value.ToString());
+                    listView.SubItems.Add(i.GiaBan.ToString());
+                    listView.SubItems.Add((i.GiaBan * SoLuongNhap).ToString());
+
+                    TongTienHoaDon += (Decimal)(i.GiaBan * SoLuongNhap);
+
+                    TN_listViewNhap.Items.Add(listView);
+                    TN_txtTongGia.Text = TongTienHoaDon.ToString();
+                }
             }
-            else
+            catch(Exception)
             {
-                ListViewItem listView = new ListViewItem(i.TenSanPham);
-
-                listView.Tag = i;
-
-                listView.SubItems.Add(numericUpDownNhap.Value.ToString());
-                listView.SubItems.Add(i.GiaBan.ToString());
-                listView.SubItems.Add((i.GiaBan * SoLuongNhap).ToString());
-
-                TongTienHoaDon += (Decimal)(i.GiaBan * SoLuongNhap);
-
-                TN_listViewNhap.Items.Add(listView);
-                TN_txtTongGia.Text = TongTienHoaDon.ToString();
+                MessageBox.Show("Thương hiệu chưa có sản phẩm nào, vui lòng thêm sản phẩm mới rồi thử lại ♥♥♥");
             }
+
 
         }
 
@@ -470,83 +593,126 @@ namespace QuanLyPhuKienDienTu
         #endregion
 
         #region Event
-
-
-        #endregion
-
-        #endregion
-
         private void buttonTimTH_Click(object sender, EventArgs e)
         {
-            ThuongHieu i = BLL.BLL_ThuongHieu.Instance.GetThuongHieuByTen(TN_cbbTimTH.Text);
-            LoadThuongHieu(i);
-            TN_dgvTH.DataSource = BLL.BLL_SanPham.Instance.GetSanPham_Views("All", "All", TN_txtTenTH.Text, "All");
-            LoadSanPhamView3();
+            try
+            {
+
+                thuongHieu = BLL.BLL_ThuongHieu.Instance.GetThuongHieuByTen(TN_cbbTimTH.Text);
+                if (thuongHieu != null)
+                {
+                    LoadThuongHieu(thuongHieu);
+                    TN_dgvTH.DataSource = BLL.BLL_SanPham.Instance.GetSanPham_Views("All", "All", thuongHieu.TenThuongHieu, "All");
+                    LoadSanPhamView3();
+                    SetShow(TN_dgvTH);
+                }    
+                else
+                {
+                    MessageBox.Show("Thương hiệu chưa tồn tại, vui lòng thêm thương hiệu mới rồi thử lại ♥♥♥");
+                }    
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại");
+            }
+            
         }
 
         private void buttonThemMoi_Click(object sender, EventArgs e)
         {
-            FormThuongHieu fTH = new FormThuongHieu();
-            fTH.ShowDialog();
-            int max = BLL.BLL_ThuongHieu.Instance.GetListThuongHieu().Count;
-            ThuongHieu i = BLL.BLL_ThuongHieu.Instance.GetThuongHieuByID(max);
-            LoadThuongHieu(i);
-        }
-
-        private void buttonXemSP_Click(object sender, EventArgs e)
-        {
-            TN_dgvTH.DataSource = BLL.BLL_SanPham.Instance.GetSanPham_Views("All", "All", TN_txtTenTH.Text, "All");
-            LoadSanPhamView3();
+            try
+            {
+                FormThuongHieu fTH = new FormThuongHieu();
+                fTH.ShowDialog();
+                int max = BLL.BLL_ThuongHieu.Instance.GetListThuongHieu().Count;
+                thuongHieu = BLL.BLL_ThuongHieu.Instance.GetThuongHieuByID(max);
+                LoadThuongHieu(thuongHieu);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại");
+            }
         }
 
         private void buttonQuayLai_Click(object sender, EventArgs e)
         {
-            TN_txtTenTH.Text = "";
-            TN_txtXuatXu.Text = "";
-            TN_txtMaTH.Text = "";
-            TN_dgvTH.DataSource = null;
-            TN_txtTongGia.Text = "";
-            TN_listViewNhap.Items.Clear();
+            try
+            {
+                TN_txtTenTH.Text = "";
+                TN_txtXuatXu.Text = "";
+                TN_txtMaTH.Text = "";
+                TN_dgvTH.DataSource = null;
+                TN_txtTongGia.Text = "";
+                TN_listViewNhap.Items.Clear();
+                thuongHieu = null;
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại");
+            }
         }
 
         private void TN_buttonThem_Click(object sender, EventArgs e)
         {
             AddListViewNhap();
-            
         }
 
         private void TN_buttonXoa_Click(object sender, EventArgs e)
         {
-            if(TN_listViewNhap.Items.Count >0)
-            DeleteListViewNhap();
+            if (TN_listViewNhap.Items.Count > 0&& TN_listViewNhap.SelectedItems.Count >0)
+                DeleteListViewNhap();
         }
 
         private void TN_buttonThemSPMoi_Click(object sender, EventArgs e)
         {
             FormSanPham fSP = new FormSanPham();
             fSP.ShowDialog();
-            buttonXemSP_Click(sender, e);
+            buttonTimTH_Click(sender, e);
         }
 
         private void TN_buttonThanhToan_Click(object sender, EventArgs e)
         {
-            
-                DateTime date = TN_dtpNhap.Value;
-                int MHD = Convert.ToInt32(TN_txtMaTH.Text);
-                BLL.BLL_HoaDonNhap.Instance.AddHoaDonNhap(MHD, date);
-                int mhd = 0;
-                mhd = BLL.BLL_HoaDonNhap.Instance.GetMaHoaDonNhapMax();
-
-                foreach (ListViewItem i in TN_listViewNhap.Items)
+            try 
+            {
+                if(thuongHieu != null && TN_listViewNhap.Items.Count>0)
                 {
-                    SanPham_View y = new SanPham_View();
-                    y = (SanPham_View)TN_listViewNhap.Items[i.Index].Tag;
-                    int slg = 0;
-                    slg = Convert.ToInt32(TN_listViewNhap.Items[i.Index].SubItems[1].Text);
+                    DateTime date = TN_dtpNhap.Value;
+                    int MHD = Convert.ToInt32(thuongHieu.MaThuongHieu);
+                    BLL.BLL_HoaDonNhap.Instance.AddHoaDonNhap(MHD, date);
+                    int mhd = 0;
+                    mhd = BLL.BLL_HoaDonNhap.Instance.GetMaHoaDonNhapMax();
 
-                    BLL.BLL_HoaDonNhapChiTiet.Instance.AddHoaDonNhapChiTiet(mhd, y.MaSanPham, slg);
-                }
+                    foreach (ListViewItem i in TN_listViewNhap.Items)
+                    {
+                        SanPham_View y = new SanPham_View();
+                        y = (SanPham_View)TN_listViewNhap.Items[i.Index].Tag;
+                        int slg = 0;
+                        slg = Convert.ToInt32(TN_listViewNhap.Items[i.Index].SubItems[1].Text);
+
+                        BLL.BLL_HoaDonNhapChiTiet.Instance.AddHoaDonNhapChiTiet(mhd, y.MaSanPham, slg);
+                    }
+                    MessageBox.Show("Thanh toán thành công! ♥♥♥");
+                    buttonQuayLai_Click(sender, e);
+                }    
+                else
+                {
+                    MessageBox.Show("Đã xảy ra lỗi , vui lòng kiểm tra giỏ hàng rồi thử lại");
+                }    
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Đã xảy ra lỗi , vui lòng thử lại");
+            }
             
+
         }
+
+        #endregion
+
+        #endregion
+
+
     }
 }
