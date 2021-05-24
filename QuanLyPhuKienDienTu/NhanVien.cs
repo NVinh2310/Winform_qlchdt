@@ -21,11 +21,11 @@ namespace QuanLyPhuKienDienTu
         }
     
         public int MaNhanVien { get; set; }
-        public int TrangThai { get; set; }
         public string TenNhanVien { get; set; }
         public string DiaChi { get; set; }
         public string SoDienThoai { get; set; }
-    
+        public int TrangThai { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TaiKhoan> TaiKhoans { get; set; }
     }

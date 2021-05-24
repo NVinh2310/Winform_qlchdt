@@ -60,5 +60,10 @@ namespace QuanLyPhuKienDienTu.BLL
         {
             return DAO_TaiKhoan.Instance.TenTaiKhoanHopLe(username);
         }
+
+        public bool XoaTaiKhoanVoiIDNhanVien(int idNhanVien)
+        {
+            return DAO_TaiKhoan.Instance.XoaTaiKhoanVoiIDNhanVien(idNhanVien);
+        }
     }
 }
