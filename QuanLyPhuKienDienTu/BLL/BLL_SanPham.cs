@@ -33,7 +33,7 @@ namespace QuanLyPhuKienDienTu.BLL
         {
             return DAO_SanPham.Instance.GetListSP(masp, namesp);
         }
-        public List<SanPham> GetSanPhamByName(string name)
+        public List<SanPham_View> GetSanPhamByName(string name)
         {
             return DAO_SanPham.Instance.GetSanPhamByName(name);
         }

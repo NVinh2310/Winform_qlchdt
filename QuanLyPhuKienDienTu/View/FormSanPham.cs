@@ -18,6 +18,7 @@ namespace QuanLyPhuKienDienTu.View
         public FormSanPham()
         {
             InitializeComponent();
+            LoadSanPham();
             SetCBBThuongHieu();
             SetCBBLoai();
         }
@@ -29,14 +30,14 @@ namespace QuanLyPhuKienDienTu.View
         public void LoadDL()
         { 
             
-            dgvSanPham.DataSource = BLL_SanPham.Instance.GetSanPham();
+            dgvSanPham.DataSource = DAO.DAO_SanPham.Instance.GetSanPhamView();
             var list = dgvSanPham.DataSource;
             txtMaSP.DataBindings.Clear();
             txtMaSP.DataBindings.Add("Text", list, "MaSanPham");  
             cbbMaTH.DataBindings.Clear();
-            cbbMaTH.DataBindings.Add("Text", list, "MaThuongHieu");
+            cbbMaTH.DataBindings.Add("Text", list, "TenThuongHieu");
             cbbMaL.DataBindings.Clear();
-            cbbMaL.DataBindings.Add("Text", list, "MaLoai");
+            cbbMaL.DataBindings.Add("Text", list, "TenLoai");
             txtTenSP.DataBindings.Clear();
             txtTenSP.DataBindings.Add("Text", list, "TenSanPham");
             txtMauSac.DataBindings.Clear();
@@ -135,8 +136,7 @@ namespace QuanLyPhuKienDienTu.View
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            txtMaSP.ReadOnly = true;
-            
+            txtMaSP.ReadOnly = true; 
             flagluu = 0;
             ClearData(); 
             DisEnl(true);
@@ -182,13 +182,13 @@ namespace QuanLyPhuKienDienTu.View
                         MessageBox.Show("Xóa không thành công !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            LoadSanPham();
+            LoadDL();
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if(flagluu == 0)
             {
-                if(Process.IsEmpty(txtMaSP.Text) ||
+                if(
                     Process.IsEmpty(cbbMaTH.Text) ||
                     Process.IsEmpty(cbbMaL.Text) ||
                     Process.IsEmpty(txtTenSP.Text) ||
@@ -206,8 +206,7 @@ namespace QuanLyPhuKienDienTu.View
                     SanPham sp = new SanPham()
                     {
                         MaThuongHieu = ((CBBItem)cbbMaTH.SelectedItem).Value,
-                        MaLoai = ((CBBItem)cbbMaL.SelectedItem).Value,
-                        
+                        MaLoai = ((CBBItem)cbbMaL.SelectedItem).Value,  
                         TenSanPham = txtTenSP.Text,
                         MauSac = txtMauSac.Text,
                         MoTa = txtMoTa.Text,
@@ -229,8 +228,8 @@ namespace QuanLyPhuKienDienTu.View
                         
                         MessageBox.Show("Thêm thất bại!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    LoadSanPham();
-                    DisEnl(false);
+                    LoadDL();
+                   // DisEnl(false);
                 }
                 catch (Exception)
                 {
@@ -254,7 +253,7 @@ namespace QuanLyPhuKienDienTu.View
                     SoLuongTonKho = Convert.ToInt32(txtSL.Text),
                     ThoiLuongBaoHanh = Convert.ToInt32(txtBaoHanh.Text)
                 };
-                int ma = Convert.ToInt32(txtMaSP.Text);
+                int ma = (int)dgvSanPham.SelectedRows[0].Cells["MaSanPham"].Value;
                 if (BLL_SanPham.Instance.SuaSanPham(ma, sp))
                 {
                      MessageBox.Show("Sửa thành công !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -262,11 +261,11 @@ namespace QuanLyPhuKienDienTu.View
                 else
                      MessageBox.Show("Sửa không thành công !", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LoadSanPham();
+            LoadDL();
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            LoadSanPham();
+            LoadDL();
             DisEnl(false);
             return;
         }
@@ -278,9 +277,9 @@ namespace QuanLyPhuKienDienTu.View
             txtMaSP.DataBindings.Clear();
             txtMaSP.DataBindings.Add("Text", data, "MaSanPham");
             cbbMaTH.DataBindings.Clear();
-            cbbMaTH.DataBindings.Add("Text", data, "MaThuongHieu");
+            cbbMaTH.DataBindings.Add("Text", data, "TenThuongHieu");
             cbbMaL.DataBindings.Clear();
-            cbbMaL.DataBindings.Add("Text", data, "MaLoai");
+            cbbMaL.DataBindings.Add("Text", data, "TenLoai");
             txtTenSP.DataBindings.Clear();
             txtTenSP.DataBindings.Add("Text", data, "TenSanPham");
             txtMauSac.DataBindings.Clear();

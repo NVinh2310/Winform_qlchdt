@@ -67,19 +67,19 @@ namespace QuanLyPhuKienDienTu.DAO
             }
             return data;
         }
-        public List<SanPham> GetSanPhamByName(string name)
+        public List<SanPham_View> GetSanPhamByName(string name)
         {
-            List<SanPham> sp = new List<SanPham>();
+            List< SanPham_View> sp = new List<SanPham_View>();
             using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
             {
                 var data = db.SanPhams.Where(p => p.TenSanPham.Contains(name)).ToList();
                 foreach (var item in data)
                 {
-                    sp.Add(new SanPham()
+                    sp.Add(new SanPham_View()
                     {
                         MaSanPham = item.MaSanPham,
-                        MaThuongHieu = item.MaThuongHieu,
-                        MaLoai = item.MaLoai,
+                        TenThuongHieu = item.ThuongHieu.TenThuongHieu,
+                        TenLoai = item.Loai.TenLoai,
                         TenSanPham = item.TenSanPham,
                         MauSac = item.MauSac,
                         MoTa = item.MoTa,
