@@ -44,6 +44,7 @@ namespace QuanLyPhuKienDienTu
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.TB_cbbSDT = new System.Windows.Forms.ComboBox();
             this.TB_ButtonKHMoi = new System.Windows.Forms.Button();
             this.TB_ButtonTimSDT = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
@@ -62,11 +63,6 @@ namespace QuanLyPhuKienDienTu
             this.TB_cbbTH = new System.Windows.Forms.ComboBox();
             this.TB_txtTimSP = new System.Windows.Forms.TextBox();
             this.TB_ButtonTimSP = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.sắpXếpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.giáCaoĐếnThấpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.giáThấpĐếnCaoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.TB_dgvSanPham = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -113,7 +109,7 @@ namespace QuanLyPhuKienDienTu
             this.panel13 = new System.Windows.Forms.Panel();
             this.TBH_dgvSanPham = new System.Windows.Forms.DataGridView();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.TBH_txtSDT = new System.Windows.Forms.TextBox();
+            this.TBH_txtSDT = new System.Windows.Forms.ComboBox();
             this.TBH_buttonTimSDT = new System.Windows.Forms.Button();
             this.TBH_txtDiaChiKH = new System.Windows.Forms.TextBox();
             this.TBH_txtTenKH = new System.Windows.Forms.TextBox();
@@ -144,6 +140,7 @@ namespace QuanLyPhuKienDienTu
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label47 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.TN_cbbTimTH = new System.Windows.Forms.ComboBox();
             this.buttonThemMoi = new System.Windows.Forms.Button();
             this.buttonQuayLai = new System.Windows.Forms.Button();
             this.buttonTimTH = new System.Windows.Forms.Button();
@@ -195,8 +192,6 @@ namespace QuanLyPhuKienDienTu
             this.label41 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label42 = new System.Windows.Forms.Label();
-            this.TN_cbbTimTH = new System.Windows.Forms.ComboBox();
-            this.TB_cbbSDT = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -204,8 +199,6 @@ namespace QuanLyPhuKienDienTu
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.menuStrip2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TB_dgvSanPham)).BeginInit();
             this.groupBox5.SuspendLayout();
@@ -349,6 +342,7 @@ namespace QuanLyPhuKienDienTu
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.TB_cbbSDT);
             this.groupBox8.Controls.Add(this.TB_ButtonKHMoi);
             this.groupBox8.Controls.Add(this.TB_ButtonTimSDT);
             this.groupBox8.Controls.Add(this.label29);
@@ -356,7 +350,6 @@ namespace QuanLyPhuKienDienTu
             this.groupBox8.Controls.Add(this.label27);
             this.groupBox8.Controls.Add(this.TB_cbbDiaChiKH);
             this.groupBox8.Controls.Add(this.TB_cbbTenKH);
-            this.groupBox8.Controls.Add(this.TB_cbbSDT);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(742, 345);
             this.groupBox8.Name = "groupBox8";
@@ -365,15 +358,25 @@ namespace QuanLyPhuKienDienTu
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Thông tin khách hàng";
             // 
+            // TB_cbbSDT
+            // 
+            this.TB_cbbSDT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.TB_cbbSDT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TB_cbbSDT.FormattingEnabled = true;
+            this.TB_cbbSDT.Location = new System.Drawing.Point(141, 36);
+            this.TB_cbbSDT.Name = "TB_cbbSDT";
+            this.TB_cbbSDT.Size = new System.Drawing.Size(157, 30);
+            this.TB_cbbSDT.TabIndex = 72;
+            // 
             // TB_ButtonKHMoi
             // 
             this.TB_ButtonKHMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TB_ButtonKHMoi.Location = new System.Drawing.Point(315, 174);
+            this.TB_ButtonKHMoi.Location = new System.Drawing.Point(141, 174);
             this.TB_ButtonKHMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TB_ButtonKHMoi.Name = "TB_ButtonKHMoi";
-            this.TB_ButtonKHMoi.Size = new System.Drawing.Size(95, 30);
+            this.TB_ButtonKHMoi.Size = new System.Drawing.Size(269, 30);
             this.TB_ButtonKHMoi.TabIndex = 71;
-            this.TB_ButtonKHMoi.Text = "Mới";
+            this.TB_ButtonKHMoi.Text = "Thêm khách hàng mới";
             this.TB_ButtonKHMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TB_ButtonKHMoi.UseVisualStyleBackColor = true;
             this.TB_ButtonKHMoi.Click += new System.EventHandler(this.TB_ButtonKHMoi_Click);
@@ -440,7 +443,6 @@ namespace QuanLyPhuKienDienTu
             this.groupBox7.Controls.Add(this.panel14);
             this.groupBox7.Controls.Add(this.TB_txtTimSP);
             this.groupBox7.Controls.Add(this.TB_ButtonTimSP);
-            this.groupBox7.Controls.Add(this.panel9);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(730, 5);
             this.groupBox7.Name = "groupBox7";
@@ -541,61 +543,19 @@ namespace QuanLyPhuKienDienTu
             this.TB_txtTimSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_txtTimSP.Location = new System.Drawing.Point(24, 53);
             this.TB_txtTimSP.Name = "TB_txtTimSP";
-            this.TB_txtTimSP.Size = new System.Drawing.Size(187, 30);
+            this.TB_txtTimSP.Size = new System.Drawing.Size(274, 30);
             this.TB_txtTimSP.TabIndex = 41;
             // 
             // TB_ButtonTimSP
             // 
-            this.TB_ButtonTimSP.Location = new System.Drawing.Point(217, 53);
+            this.TB_ButtonTimSP.Location = new System.Drawing.Point(306, 53);
             this.TB_ButtonTimSP.Name = "TB_ButtonTimSP";
-            this.TB_ButtonTimSP.Size = new System.Drawing.Size(92, 30);
+            this.TB_ButtonTimSP.Size = new System.Drawing.Size(93, 30);
             this.TB_ButtonTimSP.TabIndex = 40;
             this.TB_ButtonTimSP.Text = "Tìm";
             this.TB_ButtonTimSP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TB_ButtonTimSP.UseVisualStyleBackColor = true;
             this.TB_ButtonTimSP.Click += new System.EventHandler(this.buttonTimSP_Click);
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.menuStrip2);
-            this.panel9.Location = new System.Drawing.Point(310, 53);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(117, 30);
-            this.panel9.TabIndex = 39;
-            // 
-            // menuStrip2
-            // 
-            this.menuStrip2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sắpXếpToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(117, 32);
-            this.menuStrip2.TabIndex = 0;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
-            // sắpXếpToolStripMenuItem
-            // 
-            this.sắpXếpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.giáCaoĐếnThấpToolStripMenuItem,
-            this.giáThấpĐếnCaoToolStripMenuItem});
-            this.sắpXếpToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.sắpXếpToolStripMenuItem.Name = "sắpXếpToolStripMenuItem";
-            this.sắpXếpToolStripMenuItem.Size = new System.Drawing.Size(103, 28);
-            this.sắpXếpToolStripMenuItem.Text = "Sắp Xếp:";
-            // 
-            // giáCaoĐếnThấpToolStripMenuItem
-            // 
-            this.giáCaoĐếnThấpToolStripMenuItem.Name = "giáCaoĐếnThấpToolStripMenuItem";
-            this.giáCaoĐếnThấpToolStripMenuItem.Size = new System.Drawing.Size(238, 28);
-            this.giáCaoĐếnThấpToolStripMenuItem.Text = "Giá cao đến thấp";
-            // 
-            // giáThấpĐếnCaoToolStripMenuItem
-            // 
-            this.giáThấpĐếnCaoToolStripMenuItem.Name = "giáThấpĐếnCaoToolStripMenuItem";
-            this.giáThấpĐếnCaoToolStripMenuItem.Size = new System.Drawing.Size(238, 28);
-            this.giáThấpĐếnCaoToolStripMenuItem.Text = "Giá thấp đến cao";
             // 
             // groupBox6
             // 
@@ -1092,13 +1052,12 @@ namespace QuanLyPhuKienDienTu
             // 
             // TBH_txtSDT
             // 
-            this.TBH_txtSDT.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBH_txtSDT.Location = new System.Drawing.Point(194, 77);
-            this.TBH_txtSDT.Margin = new System.Windows.Forms.Padding(4);
-            this.TBH_txtSDT.Multiline = true;
+            this.TBH_txtSDT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TBH_txtSDT.FormattingEnabled = true;
+            this.TBH_txtSDT.Location = new System.Drawing.Point(194, 81);
             this.TBH_txtSDT.Name = "TBH_txtSDT";
-            this.TBH_txtSDT.Size = new System.Drawing.Size(401, 32);
-            this.TBH_txtSDT.TabIndex = 62;
+            this.TBH_txtSDT.Size = new System.Drawing.Size(399, 30);
+            this.TBH_txtSDT.TabIndex = 61;
             // 
             // TBH_buttonTimSDT
             // 
@@ -1421,6 +1380,16 @@ namespace QuanLyPhuKienDienTu
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Chức Năng";
+            // 
+            // TN_cbbTimTH
+            // 
+            this.TN_cbbTimTH.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.TN_cbbTimTH.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TN_cbbTimTH.FormattingEnabled = true;
+            this.TN_cbbTimTH.Location = new System.Drawing.Point(6, 39);
+            this.TN_cbbTimTH.Name = "TN_cbbTimTH";
+            this.TN_cbbTimTH.Size = new System.Drawing.Size(261, 28);
+            this.TN_cbbTimTH.TabIndex = 43;
             // 
             // buttonThemMoi
             // 
@@ -1757,7 +1726,7 @@ namespace QuanLyPhuKienDienTu
             this.groupBox2.Controls.Add(this.TN_txtTenTH);
             this.groupBox2.Controls.Add(this.TN_txtMaTH);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(787, 471);
+            this.groupBox2.Location = new System.Drawing.Point(787, 462);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(377, 160);
             this.groupBox2.TabIndex = 7;
@@ -2010,25 +1979,6 @@ namespace QuanLyPhuKienDienTu
             this.label42.TabIndex = 4;
             this.label42.Text = "Giỏ hàng:";
             // 
-            // TN_cbbTimTH
-            // 
-            this.TN_cbbTimTH.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.TN_cbbTimTH.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.TN_cbbTimTH.FormattingEnabled = true;
-            this.TN_cbbTimTH.Location = new System.Drawing.Point(6, 39);
-            this.TN_cbbTimTH.Name = "TN_cbbTimTH";
-            this.TN_cbbTimTH.Size = new System.Drawing.Size(261, 28);
-            this.TN_cbbTimTH.TabIndex = 43;
-            // 
-            // TB_cbbSDT
-            // 
-            this.TB_cbbSDT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.TB_cbbSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_cbbSDT.Location = new System.Drawing.Point(141, 37);
-            this.TB_cbbSDT.Name = "TB_cbbSDT";
-            this.TB_cbbSDT.Size = new System.Drawing.Size(157, 30);
-            this.TB_cbbSDT.TabIndex = 66;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2053,10 +2003,6 @@ namespace QuanLyPhuKienDienTu
             this.groupBox7.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TB_dgvSanPham)).EndInit();
             this.groupBox5.ResumeLayout(false);
@@ -2200,11 +2146,6 @@ namespace QuanLyPhuKienDienTu
         private System.Windows.Forms.ComboBox TB_cbbTH;
         private System.Windows.Forms.TextBox TB_txtTimSP;
         private System.Windows.Forms.Button TB_ButtonTimSP;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem sắpXếpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem giáCaoĐếnThấpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem giáThấpĐếnCaoToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataGridView TB_dgvSanPham;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -2233,7 +2174,6 @@ namespace QuanLyPhuKienDienTu
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.DataGridView TBH_dgvSanPham;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.TextBox TBH_txtSDT;
         private System.Windows.Forms.Button TBH_buttonTimSDT;
         private System.Windows.Forms.TextBox TBH_txtDiaChiKH;
         private System.Windows.Forms.TextBox TBH_txtTenKH;
@@ -2262,6 +2202,7 @@ namespace QuanLyPhuKienDienTu
         private System.Windows.Forms.DateTimePicker TN_dtpNhap;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox TN_cbbTimTH;
-        private System.Windows.Forms.TextBox TB_cbbSDT;
+        private System.Windows.Forms.ComboBox TB_cbbSDT;
+        private System.Windows.Forms.ComboBox TBH_txtSDT;
     }
 }
