@@ -60,6 +60,7 @@ namespace QuanLyPhuKienDienTu.View
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
@@ -338,7 +339,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.btnXem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXem.Location = new System.Drawing.Point(193, 183);
+            this.btnXem.Location = new System.Drawing.Point(82, 185);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(85, 40);
             this.btnXem.TabIndex = 2;
@@ -350,7 +351,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(292, 184);
+            this.btnThem.Location = new System.Drawing.Point(189, 186);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(85, 40);
             this.btnThem.TabIndex = 3;
@@ -362,7 +363,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(391, 184);
+            this.btnSua.Location = new System.Drawing.Point(296, 187);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(85, 40);
             this.btnSua.TabIndex = 4;
@@ -374,7 +375,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(490, 184);
+            this.btnXoa.Location = new System.Drawing.Point(403, 187);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(85, 40);
             this.btnXoa.TabIndex = 5;
@@ -387,7 +388,7 @@ namespace QuanLyPhuKienDienTu.View
             this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLuu.Enabled = false;
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(589, 184);
+            this.btnLuu.Location = new System.Drawing.Point(510, 185);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(85, 40);
             this.btnLuu.TabIndex = 6;
@@ -400,7 +401,7 @@ namespace QuanLyPhuKienDienTu.View
             this.btnHuy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnHuy.Enabled = false;
             this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Location = new System.Drawing.Point(688, 184);
+            this.btnHuy.Location = new System.Drawing.Point(617, 187);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(85, 40);
             this.btnHuy.TabIndex = 7;
@@ -412,7 +413,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(1104, 189);
+            this.btnTimKiem.Location = new System.Drawing.Point(1040, 193);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(104, 30);
             this.btnTimKiem.TabIndex = 8;
@@ -423,16 +424,29 @@ namespace QuanLyPhuKienDienTu.View
             // txtTimKiem
             // 
             this.txtTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTimKiem.Location = new System.Drawing.Point(794, 193);
+            this.txtTimKiem.Location = new System.Drawing.Point(730, 197);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(293, 22);
             this.txtTimKiem.TabIndex = 9;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1150, 192);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 30);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Hủy Tìm";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1296, 611);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.btnHuy);
@@ -487,5 +501,6 @@ namespace QuanLyPhuKienDienTu.View
         private System.Windows.Forms.ComboBox cbbMaTH;
         private System.Windows.Forms.DataGridView dgvSanPham;
         private System.Windows.Forms.TextBox txtBaoHanh;
+        private System.Windows.Forms.Button button1;
     }
 }
