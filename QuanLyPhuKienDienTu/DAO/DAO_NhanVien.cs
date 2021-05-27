@@ -80,11 +80,7 @@ namespace QuanLyPhuKienDienTu.DAO
                 var data = from nhanvien in db.NhanViens
                            where !(from taikhoan in db.TaiKhoans select taikhoan.MaNhanVien)
                            .Contains(nhanvien.MaNhanVien)
-                           select new NhanVien
-                           {
-                               MaNhanVien = nhanvien.MaNhanVien,
-                               TenNhanVien = nhanvien.TenNhanVien
-                           };
+                           select nhanvien;
                 return data.ToList();
             } 
         }

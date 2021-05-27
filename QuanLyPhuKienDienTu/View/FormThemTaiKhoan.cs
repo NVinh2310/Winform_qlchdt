@@ -75,7 +75,7 @@ namespace QuanLyPhuKienDienTu
             try
             {
                 int id = ((CBBItem)cbbName.SelectedItem).Value;
-                
+
                 TaiKhoan taiKhoan = new TaiKhoan()
                 {
                     MaNhanVien = id,
@@ -96,9 +96,8 @@ namespace QuanLyPhuKienDienTu
             }
             catch (NullReferenceException)
             {
-                MessageBox.Show("Dữ liệu nhân viên muốn thêm bị sai. Vui lòng chọn lại");
+                MessageBox.Show("Dữ liệu của nhân viên đã xảy ra lỗi. Vui lòng nhập lại !");
             }
-
         }
 
         private void exitButton_Click(object sender, EventArgs e)

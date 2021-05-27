@@ -52,7 +52,7 @@ namespace QuanLyPhuKienDienTu.DAO
                                TongSoLuong = g.Sum(x => x.TongSoLuong),
                                TongTien = g.Sum(x => x.TongTien)
                            };
-                foreach(var item in query.ToList())
+                foreach(var item in query)
                 {
                     data.Add(new ThongTinBan()
                     {
