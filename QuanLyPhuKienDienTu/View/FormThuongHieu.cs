@@ -67,22 +67,29 @@ namespace QuanLyPhuKienDienTu.View
         
         private void btnXem_Click(object sender, EventArgs e)
         {
-            groupBox1.Text = "Danh sách sản phẩm của thương hiệu";
-            dgvThuongHieu.DataSource = DAO.DAO_SanPham.Instance.GetSanPhamByThuongHieu(Convert.ToInt32(txtMaTH.Text));
-            dgvThuongHieu.Columns["MoTa"].Visible = false;
-            dgvThuongHieu.Columns["MaSanPham"].Visible = false;
-            dgvThuongHieu.Columns["MaThuongHieu"].Visible = false;
-            dgvThuongHieu.Columns["MaLoai"].Visible = false;
-            dgvThuongHieu.Columns["ChiTietHoaDonBans"].Visible = false;
-            dgvThuongHieu.Columns["ChiTietHoaDonNhaps"].Visible = false;
-            dgvThuongHieu.Columns["ThuongHieu"].Visible = false;
-            dgvThuongHieu.Columns["Loai"].Visible = false;
-            btnHuy.Enabled = true;
-            btnXoa.Enabled = false;
-            btnTimKiem.Enabled = false;
-            btnThem.Enabled = false;
-            btnSua.Enabled = false;
-            btnXem.Enabled = false;
+            try
+            {
+                groupBox1.Text = "Danh sách sản phẩm của thương hiệu";
+                dgvThuongHieu.DataSource = DAO.DAO_SanPham.Instance.GetSanPhamByThuongHieu(Convert.ToInt32(txtMaTH.Text));
+                dgvThuongHieu.Columns["MoTa"].Visible = false;
+                dgvThuongHieu.Columns["MaSanPham"].Visible = false;
+                dgvThuongHieu.Columns["MaThuongHieu"].Visible = false;
+                dgvThuongHieu.Columns["MaLoai"].Visible = false;
+                dgvThuongHieu.Columns["ChiTietHoaDonBans"].Visible = false;
+                dgvThuongHieu.Columns["ChiTietHoaDonNhaps"].Visible = false;
+                dgvThuongHieu.Columns["ThuongHieu"].Visible = false;
+                dgvThuongHieu.Columns["Loai"].Visible = false;
+                btnHuy.Enabled = true;
+                btnXoa.Enabled = false;
+                btnTimKiem.Enabled = false;
+                btnThem.Enabled = false;
+                btnSua.Enabled = false;
+                btnXem.Enabled = false;
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Lỗi! vui lòng thủ lại");
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -171,6 +178,7 @@ namespace QuanLyPhuKienDienTu.View
             DisEnl(false);
             groupBox1.Text = "Danh sách thuong hiệu";
             loadDL();
+            btnTimKiem.Enabled = true;
 
         }
 
@@ -179,6 +187,7 @@ namespace QuanLyPhuKienDienTu.View
             string name = txtSearch.Text;
             dgvThuongHieu.DataSource = BLL_ThuongHieu.Instance.GetThuongHieuByName(name);
             Process.InvisibleAttributes(dgvThuongHieu, new object[] { "MaThuongHieu" });
+            btnHuy.Enabled = true;
         }
 
        
