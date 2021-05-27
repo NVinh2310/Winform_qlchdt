@@ -264,6 +264,7 @@ namespace QuanLyPhuKienDienTu
 
         #endregion
         #region Event
+        // sự kiện tìm sản phẩm
         private void buttonTimSP_Click(object sender, EventArgs e)
         {
             string loai = TB_cbbLoai.SelectedItem.ToString();
@@ -274,7 +275,7 @@ namespace QuanLyPhuKienDienTu
             SetShow(TB_dgvSanPham);
             LoadSanPhamView();
         }
-
+        // sự kiện thêm sản phẩm vào list view
         private void buttonThem_Click(object sender, EventArgs e)
         {
             try
@@ -310,7 +311,7 @@ namespace QuanLyPhuKienDienTu
             }
             
         }
-
+        // sự kiện xóa sản phẩm khỏi list view
         private void buttonXoa_Click(object sender, EventArgs e)
         {
             if (TB_lvGioHang.Items.Count != 0 && TB_lvGioHang.SelectedItems.Count != 0)
@@ -318,7 +319,7 @@ namespace QuanLyPhuKienDienTu
                 DeleteListViewBan();
             }
         }
-
+        // sự kiện thanh toán
         private void payButton_Click(object sender, EventArgs e)
         {
             try
@@ -356,7 +357,7 @@ namespace QuanLyPhuKienDienTu
             }
             
         }
-
+        // Sự kiện tìm khách hàng theo số điện thoại
         private void TB_ButtonTimSDT_Click(object sender, EventArgs e)
         {
             try
@@ -374,6 +375,7 @@ namespace QuanLyPhuKienDienTu
             }
         }
 
+        // Sự kiện thêm khách hàng mới
         private void TB_ButtonKHMoi_Click(object sender, EventArgs e)
         {
             try
@@ -417,6 +419,8 @@ namespace QuanLyPhuKienDienTu
             }
             else
                 TBH_rtxtGhiChu.Text = y.GhiChu + "\n- Ngày bảo hành:" + DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year + "\n";
+            TBH_buttonLuu.Enabled =true;
+            TBH_buttonHuy.Enabled = true;
 
         }
 
@@ -633,7 +637,14 @@ namespace QuanLyPhuKienDienTu
         {
             LoadThuongHieu(thuongHieu);
             TN_dgvTH.DataSource = BLL.BLL_SanPham.Instance.GetSanPham_Views("All", "All", thuongHieu.TenThuongHieu, "All");
+
+            SetShow(TN_dgvTH);
             LoadSanPhamView3();
+            
+            TN_buttonThemSPMoi.Enabled = true;
+            TN_buttonThem.Enabled = true;
+            TN_buttonXoa.Enabled = true;
+            buttonThemMoi.Enabled = false;
         }
         public void showThuongHieu()
         {
@@ -641,12 +652,18 @@ namespace QuanLyPhuKienDienTu
             TN_dgvTH.Columns[3].Visible = false;
             TN_dgvTH.Columns[4].Visible = false;
             buttonQuayLai.Enabled = false;
+            TN_buttonThemSPMoi.Enabled = false;
 
+            TN_buttonThem.Enabled = false;
+            TN_buttonXoa.Enabled = false;
+            buttonThemMoi.Enabled = true;
         }
 
         #endregion
 
         #region Event
+
+        //Sự kiện chọn thương hiệu
         private void buttonTimTH_Click(object sender, EventArgs e)
         {
             try
@@ -655,16 +672,20 @@ namespace QuanLyPhuKienDienTu
                 thuongHieu = BLL.BLL_ThuongHieu.Instance.GetThuongHieuByTen(TN_cbbTimTH.Text);
                 if (thuongHieu != null)
                 {
-                    showThuongHieu();
-
+                    showSPcuaThuongHieu();
                     buttonTimTH.Enabled = false;
                     buttonQuayLai.Enabled = true;
+                    TN_cbbTimTH.Enabled = false;
+
+                    TN_buttonThem.Enabled = true;
+                    TN_buttonXoa.Enabled = true;
                 }    
                 else
                 {
                     MessageBox.Show("Thương hiệu chưa tồn tại, vui lòng thêm thương hiệu mới rồi thử lại ♥♥♥");
-                }    
+                }
 
+                
             }
             catch (Exception)
             {
@@ -672,6 +693,7 @@ namespace QuanLyPhuKienDienTu
             }
             
         }
+        // Sự kiện thêm mới thương hiệu
 
         private void buttonThemMoi_Click(object sender, EventArgs e)
         {
@@ -680,26 +702,14 @@ namespace QuanLyPhuKienDienTu
                 buttonQuayLai_Click(sender, e);
                 FormThuongHieu fTH = new FormThuongHieu();
                 fTH.ShowDialog();
-                int max = BLL.BLL_ThuongHieu.Instance.GetListThuongHieu().Count;
-                thuongHieu = BLL.BLL_ThuongHieu.Instance.GetThuongHieuByID(max);;
-                if (thuongHieu != null)
-                {
-                    showSPcuaThuongHieu();
-                }
-                else
-                {
-                    MessageBox.Show("Đã xảy ra lỗi, vui lòng thêm thương hiệu mới rồi thử lại ♥♥♥");
-                }
-                buttonTimTH.Enabled = false;
-                buttonQuayLai.Enabled = true;
-                TN_cbbTimTH.Enabled = false;
+                showThuongHieu();
             }
             catch (Exception)
             {
                 MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại");
             }
         }
-
+        // Sự kiện quay lại
         private void buttonQuayLai_Click(object sender, EventArgs e)
         {
             try
@@ -725,24 +735,29 @@ namespace QuanLyPhuKienDienTu
             }
         }
 
+        //Sự kiện thêm sản phẩm vào listview
         private void TN_buttonThem_Click(object sender, EventArgs e)
         {
             AddListViewNhap();
         }
 
+        // Sự kiện xóa sản phẩm khỏi listview
         private void TN_buttonXoa_Click(object sender, EventArgs e)
         {
             if (TN_listViewNhap.Items.Count > 0&& TN_listViewNhap.SelectedItems.Count >0)
                 DeleteListViewNhap();
         }
 
+        // Sự kiện thêm sản phẩm mới
         private void TN_buttonThemSPMoi_Click(object sender, EventArgs e)
         {
             FormSanPham fSP = new FormSanPham();
             fSP.ShowDialog();
             show();
+            showSPcuaThuongHieu();
         }
 
+        // Sự kiện thanh toán
         private void TN_buttonThanhToan_Click(object sender, EventArgs e)
         {
             try 
@@ -783,29 +798,24 @@ namespace QuanLyPhuKienDienTu
 
         }
 
-
-
-        #endregion
-
-        #endregion
-
+        // Sự kkieejnload danh sách sản phẩm của khách hàng
         private void TN_dgvTH_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
-                if (TN_dgvTH.Columns.Contains("TenThuongHieu"))
+                if (TN_dgvTH.Columns.Contains("MaThuongHieu"))
                 {
                     TN_cbbTimTH.Text = TN_dgvTH.CurrentRow.Cells["TenThuongHieu"].Value.ToString();
 
-
                     thuongHieu = BLL.BLL_ThuongHieu.Instance.GetThuongHieuByTen(TN_cbbTimTH.Text);
-
 
                     showSPcuaThuongHieu();
                     buttonTimTH.Enabled = false;
                     buttonQuayLai.Enabled = true;
                     TN_cbbTimTH.Enabled = false;
 
+                    TN_buttonThem.Enabled = true;
+                    TN_buttonXoa.Enabled = true;
                 }
             }
             catch (Exception)
@@ -814,5 +824,13 @@ namespace QuanLyPhuKienDienTu
 
             }
         }
+
+        #endregion
+
+        #endregion
+
+
+
+
     }
 }
