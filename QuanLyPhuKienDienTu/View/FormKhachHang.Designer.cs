@@ -49,6 +49,7 @@ namespace QuanLyPhuKienDienTu.View
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXem = new System.Windows.Forms.Button();
+            this.btnHuyTim = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -198,6 +199,7 @@ namespace QuanLyPhuKienDienTu.View
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.btnHuyTim);
             this.groupBox3.Controls.Add(this.txtSearch);
             this.groupBox3.Controls.Add(this.btnTimKiem);
             this.groupBox3.Controls.Add(this.btnHuy);
@@ -216,15 +218,15 @@ namespace QuanLyPhuKienDienTu.View
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(53, 69);
+            this.txtSearch.Location = new System.Drawing.Point(63, 39);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(253, 30);
+            this.txtSearch.Size = new System.Drawing.Size(337, 30);
             this.txtSearch.TabIndex = 8;
             // 
             // btnTimKiem
             // 
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(312, 69);
+            this.btnTimKiem.Location = new System.Drawing.Point(131, 75);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(77, 30);
             this.btnTimKiem.TabIndex = 6;
@@ -294,6 +296,17 @@ namespace QuanLyPhuKienDienTu.View
             this.btnXem.UseVisualStyleBackColor = true;
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
+            // btnHuyTim
+            // 
+            this.btnHuyTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyTim.Location = new System.Drawing.Point(236, 75);
+            this.btnHuyTim.Name = "btnHuyTim";
+            this.btnHuyTim.Size = new System.Drawing.Size(77, 30);
+            this.btnHuyTim.TabIndex = 9;
+            this.btnHuyTim.Text = "Hủy Tìm";
+            this.btnHuyTim.UseVisualStyleBackColor = true;
+            this.btnHuyTim.Click += new System.EventHandler(this.btnHuyTim_Click);
+            // 
             // FormKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -336,5 +349,6 @@ namespace QuanLyPhuKienDienTu.View
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXem;
+        private System.Windows.Forms.Button btnHuyTim;
     }
 }

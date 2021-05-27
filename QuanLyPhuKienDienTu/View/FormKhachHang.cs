@@ -25,6 +25,7 @@ namespace QuanLyPhuKienDienTu.View
         {
             dgvKhachHang.DataSource = BLL_KhachHang.Instance.GetKhachHang();
             Process.InvisibleAttributes(dgvKhachHang, new object[] { "MaKhachHang" });
+            Process.InvisibleAttributes(dgvKhachHang, new object[] { "HoaDonBans" });
             var list = dgvKhachHang.DataSource;
             txtMaKH.DataBindings.Clear();
             txtMaKH.DataBindings.Add("Text", list, "MaKhachHang");
@@ -61,6 +62,7 @@ namespace QuanLyPhuKienDienTu.View
             int mkh = Convert.ToInt32(dgvKhachHang.CurrentRow.Cells["MaKhachHang"].Value.ToString());
            dgvKhachHang.DataSource= DAO.DAO_HoaDonBanChiTiet.Instance.GetSP(mkh);
             btnHuy.Enabled = true;
+            btnXem.Enabled = false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -198,6 +200,7 @@ namespace QuanLyPhuKienDienTu.View
             }
             getrecord();
             Process.InvisibleAttributes(dgvKhachHang, new object[] { "MaKhachHang" });
+            Process.InvisibleAttributes(dgvKhachHang, new object[] { "HoaDonBans" });
         }
 
         private void txtSĐT_KeyPress(object sender, KeyPressEventArgs e)
@@ -216,6 +219,12 @@ namespace QuanLyPhuKienDienTu.View
                 MessageBox.Show(" Mã khách hàng chỉ được nhập số!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 e.Handled = true;
             }
+        }
+
+        private void btnHuyTim_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+            loadDL();
         }
     }
 }
