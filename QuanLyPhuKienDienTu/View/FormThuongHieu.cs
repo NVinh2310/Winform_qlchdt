@@ -19,12 +19,12 @@ namespace QuanLyPhuKienDienTu.View
         public FormThuongHieu()
         {
             InitializeComponent();
-            LoadThuongHieu();
+            
             loadDL();
         }
         private void FormThuongHieu_Load(object sender, EventArgs e)
         {
-            LoadThuongHieu();
+            
             loadDL();
         }
         public void loadDL()
@@ -37,6 +37,14 @@ namespace QuanLyPhuKienDienTu.View
             txtTenTH.DataBindings.Add("Text", dgvThuongHieu.DataSource, "TenThuongHieu");
             txtXuatXu.DataBindings.Clear();
             txtXuatXu.DataBindings.Add("Text", dgvThuongHieu.DataSource, "XuatXu");
+
+            
+            dgvThuongHieu.Columns["HoaDonNhaps"].Visible = false;
+            dgvThuongHieu.Columns["SanPhams"].Visible = false;
+
+            
+                
+
         }
         public void DisEnl(bool e)
         {
@@ -56,16 +64,25 @@ namespace QuanLyPhuKienDienTu.View
             txtTenTH.Text = "";
             txtXuatXu.Text = "";
         }
-        public void LoadThuongHieu()
-        {
-            dgvThuongHieu.DataSource = BLL_ThuongHieu.Instance.GetListThuongHieu();
-            Process.InvisibleAttributes(dgvThuongHieu, new object[] { "MaThuongHieu" });
-        }
+        
         private void btnXem_Click(object sender, EventArgs e)
         {
-            
+            groupBox1.Text = "Danh sách sản phẩm của thương hiệu";
             dgvThuongHieu.DataSource = DAO.DAO_SanPham.Instance.GetSanPhamByThuongHieu(Convert.ToInt32(txtMaTH.Text));
+            dgvThuongHieu.Columns["MoTa"].Visible = false;
+            dgvThuongHieu.Columns["MaSanPham"].Visible = false;
+            dgvThuongHieu.Columns["MaThuongHieu"].Visible = false;
+            dgvThuongHieu.Columns["MaLoai"].Visible = false;
+            dgvThuongHieu.Columns["ChiTietHoaDonBans"].Visible = false;
+            dgvThuongHieu.Columns["ChiTietHoaDonNhaps"].Visible = false;
+            dgvThuongHieu.Columns["ThuongHieu"].Visible = false;
+            dgvThuongHieu.Columns["Loai"].Visible = false;
             btnHuy.Enabled = true;
+            btnXoa.Enabled = false;
+            btnTimKiem.Enabled = false;
+            btnThem.Enabled = false;
+            btnSua.Enabled = false;
+            btnXem.Enabled = false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -92,25 +109,7 @@ namespace QuanLyPhuKienDienTu.View
             txtXuatXu.Enabled = true;
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            DataGridViewSelectedRowCollection r = dgvThuongHieu.SelectedRows;
-            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa Thương hiệu này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
-            {
-                foreach (DataGridViewRow i in r)
-                {
-                    int maTH = (int)i.Cells["MaThuongHieu"].Value;
-                    if (BLL_ThuongHieu.Instance.XoaThuongHieu(maTH))
-                    {
-                        MessageBox.Show("Xóa thành công !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                        MessageBox.Show("Xóa THông thành công !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            FormThuongHieu_Load(sender, e);
-        }
+        
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -137,7 +136,7 @@ namespace QuanLyPhuKienDienTu.View
                         MessageBox.Show("Thêm thất bại!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
-                    FormThuongHieu_Load(sender, e);
+                    loadDL();
                     DisEnl(false);
                 }
                 catch (Exception)
@@ -170,7 +169,8 @@ namespace QuanLyPhuKienDienTu.View
         {
             btnXem_Click(sender, e);
             DisEnl(false);
-            dgvThuongHieu.DataSource = BLL.BLL_ThuongHieu.Instance.GetListThuongHieu();
+            groupBox1.Text = "Danh sách thuong hiệu";
+            loadDL();
 
         }
 
@@ -185,14 +185,39 @@ namespace QuanLyPhuKienDienTu.View
 
         private void txtMaTH_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                MessageBox.Show(" Mã Thương Hiệu chỉ được nhập số!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Handled = true;
-            }
+            
         }
 
-        
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            
+            ThuongHieu th = BLL_ThuongHieu.Instance.GetThuongHieuByID(Convert.ToInt32(txtMaTH.Text));
+
+            List<SanPham_View> sp = BLL_SanPham.Instance.GetSanPham_Views("All", "All",th.TenThuongHieu ,"All");
+            if (sp.Count == 0)
+            {
+                DataGridViewSelectedRowCollection r = dgvThuongHieu.SelectedRows;
+                DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa Thương hiệu này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow i in r)
+                    {
+                        int maTH = (int)i.Cells["MaThuongHieu"].Value;
+                        if (BLL_ThuongHieu.Instance.XoaThuongHieu(maTH))
+                        {
+                            MessageBox.Show("Xóa thành công !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                            MessageBox.Show("Xóa THông thành công !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            } 
+            else
+            {
+                MessageBox.Show("Để Xóa Thương Hiệu Này, Cần xóa Sản phẩm và các hóa đơn có liên quan");
+            }    
+            loadDL();
+        }
     }
 }
 

@@ -29,6 +29,7 @@ namespace QuanLyPhuKienDienTu
             InitializeComponent();
             setComboBox();
             show();
+            showThuongHieu();
                
         }
 
@@ -624,8 +625,23 @@ namespace QuanLyPhuKienDienTu
         public void LoadThuongHieu(ThuongHieu i)
         {
             TN_txtMaTH.Text = i.MaThuongHieu.ToString();
-            TN_txtTenTH.Text = i.TenThuongHieu;
+            TN_cbbTimTH.Text = i.TenThuongHieu;
             TN_txtXuatXu.Text = i.XuatXu;
+        }
+
+        public void showSPcuaThuongHieu()
+        {
+            LoadThuongHieu(thuongHieu);
+            TN_dgvTH.DataSource = BLL.BLL_SanPham.Instance.GetSanPham_Views("All", "All", thuongHieu.TenThuongHieu, "All");
+            LoadSanPhamView3();
+        }
+        public void showThuongHieu()
+        {
+            TN_dgvTH.DataSource = BLL.BLL_ThuongHieu.Instance.GetListThuongHieu();
+            TN_dgvTH.Columns[3].Visible = false;
+            TN_dgvTH.Columns[4].Visible = false;
+            buttonQuayLai.Enabled = false;
+
         }
 
         #endregion
@@ -639,10 +655,10 @@ namespace QuanLyPhuKienDienTu
                 thuongHieu = BLL.BLL_ThuongHieu.Instance.GetThuongHieuByTen(TN_cbbTimTH.Text);
                 if (thuongHieu != null)
                 {
-                    LoadThuongHieu(thuongHieu);
-                    TN_dgvTH.DataSource = BLL.BLL_SanPham.Instance.GetSanPham_Views("All", "All", thuongHieu.TenThuongHieu, "All");
-                    LoadSanPhamView3();
-                    SetShow(TN_dgvTH);
+                    showThuongHieu();
+
+                    buttonTimTH.Enabled = false;
+                    buttonQuayLai.Enabled = true;
                 }    
                 else
                 {
@@ -668,15 +684,15 @@ namespace QuanLyPhuKienDienTu
                 thuongHieu = BLL.BLL_ThuongHieu.Instance.GetThuongHieuByID(max);;
                 if (thuongHieu != null)
                 {
-                    LoadThuongHieu(thuongHieu);
-                    TN_dgvTH.DataSource = BLL.BLL_SanPham.Instance.GetSanPham_Views("All", "All", thuongHieu.TenThuongHieu, "All");
-                    LoadSanPhamView3();
-                    SetShow(TN_dgvTH);
+                    showSPcuaThuongHieu();
                 }
                 else
                 {
                     MessageBox.Show("Đã xảy ra lỗi, vui lòng thêm thương hiệu mới rồi thử lại ♥♥♥");
                 }
+                buttonTimTH.Enabled = false;
+                buttonQuayLai.Enabled = true;
+                TN_cbbTimTH.Enabled = false;
             }
             catch (Exception)
             {
@@ -688,14 +704,19 @@ namespace QuanLyPhuKienDienTu
         {
             try
             {
-                TN_txtTenTH.Text = "";
+                TN_cbbTimTH.Text = "";
                 TN_txtXuatXu.Text = "";
                 TN_txtMaTH.Text = "";
-                TN_dgvTH.DataSource = null;
+                showThuongHieu();
                 TN_txtTongGia.Text = "";
+
                 TN_listViewNhap.Items.Clear();
                 thuongHieu = null;
                 TongTienHoaDonNhap = 0;
+
+                buttonTimTH.Enabled = true;
+                buttonQuayLai.Enabled = false;
+                TN_cbbTimTH.Enabled = true;
 
             }
             catch (Exception)
@@ -719,7 +740,7 @@ namespace QuanLyPhuKienDienTu
         {
             FormSanPham fSP = new FormSanPham();
             fSP.ShowDialog();
-            buttonTimTH_Click(sender, e);
+            show();
         }
 
         private void TN_buttonThanhToan_Click(object sender, EventArgs e)
@@ -745,6 +766,8 @@ namespace QuanLyPhuKienDienTu
                         BLL.BLL_SanPham.Instance.SanPhamSauGiaoDich(y.MaSanPham, slgSauGiaoDich);
                     }
                     MessageBox.Show("Thanh toán thành công! ♥♥♥");
+
+                    show();
                     buttonQuayLai_Click(sender, e);
                 }    
                 else
@@ -760,10 +783,36 @@ namespace QuanLyPhuKienDienTu
 
         }
 
+
+
         #endregion
 
         #endregion
 
+        private void TN_dgvTH_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                if (TN_dgvTH.Columns.Contains("TenThuongHieu"))
+                {
+                    TN_cbbTimTH.Text = TN_dgvTH.CurrentRow.Cells["TenThuongHieu"].Value.ToString();
 
+
+                    thuongHieu = BLL.BLL_ThuongHieu.Instance.GetThuongHieuByTen(TN_cbbTimTH.Text);
+
+
+                    showSPcuaThuongHieu();
+                    buttonTimTH.Enabled = false;
+                    buttonQuayLai.Enabled = true;
+                    TN_cbbTimTH.Enabled = false;
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại");
+
+            }
+        }
     }
 }
