@@ -14,6 +14,8 @@ namespace QuanLyPhuKienDienTu.View
 {
     public partial class FormKhachHang : Form
     {
+        public delegate void MyDel();
+        public MyDel del { get; set; }
         private int flagluu = 0;
         public FormKhachHang()
         {
@@ -225,6 +227,11 @@ namespace QuanLyPhuKienDienTu.View
         {
             txtSearch.Text = "";
             loadDL();
+        }
+
+        private void FormKhachHang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            del();
         }
     }
 }

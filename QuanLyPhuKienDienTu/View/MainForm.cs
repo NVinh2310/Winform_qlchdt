@@ -27,10 +27,14 @@ namespace QuanLyPhuKienDienTu
         public MainForm()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
             setComboBox();
             show();
             showThuongHieu();
-               
         }
 
         // Tab Bán Hàng
@@ -825,12 +829,77 @@ namespace QuanLyPhuKienDienTu
             }
         }
 
+
+
+
         #endregion
 
         #endregion
 
+        private void quảnLýSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSanPham form = new FormSanPham();
+            form.del = new FormSanPham.MyDel(LoadData);
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
 
+        private void quảnLýKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormKhachHang form = new FormKhachHang();
+            form.del = new FormKhachHang.MyDel(LoadData);
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
 
+        private void quảnLýThuongHieuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormThuongHieu form = new FormThuongHieu();
+            form.del = new FormThuongHieu.MyDel(LoadData);
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
 
+        private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormNhanVien form = new FormNhanVien();
+            form.del = new FormNhanVien.MyDel(LoadData);
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDoiMatKhau form = new FormDoiMatKhau();
+            form.del = new FormDoiMatKhau.MyDel(LoadData);
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bánHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHoaDonBan form = new FormHoaDonBan();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void nhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHoaDonNhap form = new FormHoaDonNhap();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
     }
 }

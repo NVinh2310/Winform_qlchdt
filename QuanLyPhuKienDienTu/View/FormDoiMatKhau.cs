@@ -15,6 +15,8 @@ namespace QuanLyPhuKienDienTu
 {
     public partial class FormDoiMatKhau : Form
     {
+        public delegate void MyDel();
+        public MyDel del { get; set; }
         public FormDoiMatKhau()
         {
             InitializeComponent();
@@ -45,6 +47,7 @@ namespace QuanLyPhuKienDienTu
                 //Đổi mật khẩu
                 if(BLL_TaiKhoan.Instance.DoiMatKhau(username, password, newPassword)) {
                     MessageBox.Show("Đổi mật khẩu thành công");
+                    del();
                     this.Close();
                 }
                 else

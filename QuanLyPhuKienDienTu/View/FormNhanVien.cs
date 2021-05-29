@@ -14,6 +14,8 @@ namespace QuanLyPhuKienDienTu.View
 {
     public partial class FormNhanVien : Form
     {
+        public delegate void MyDel();
+        public MyDel del { get; set; }
         bool addFlag = false;
         bool editFlag = false;
         public FormNhanVien()
@@ -289,6 +291,7 @@ namespace QuanLyPhuKienDienTu.View
 
         private void exitButton_Click(object sender, EventArgs e)
         {
+            del();
             this.Close();
         }
 
@@ -305,6 +308,11 @@ namespace QuanLyPhuKienDienTu.View
         private void cancleButton_Click(object sender, EventArgs e)
         {
             LoadNhanVien();
+        }
+
+        private void FormNhanVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            del();
         }
     }
 }

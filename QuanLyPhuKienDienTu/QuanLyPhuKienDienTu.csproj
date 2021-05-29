@@ -151,12 +151,6 @@
     <Compile Include="View\FormThemTaiKhoan.Designer.cs">
       <DependentUpon>FormThemTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\AdminForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\AdminForm.Designer.cs">
-      <DependentUpon>AdminForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ChiTietHoaDonBan.cs">
       <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
     </Compile>
@@ -203,12 +197,6 @@
     </Compile>
     <Compile Include="NhanVien.cs">
       <DependentUpon>QuanLyPhuKienDienTu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="View\PayForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\PayForm.Designer.cs">
-      <DependentUpon>PayForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -275,9 +263,6 @@
     <EmbeddedResource Include="View\FormThemTaiKhoan.resx">
       <DependentUpon>FormThemTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\AdminForm.resx">
-      <DependentUpon>AdminForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\FormTaiKhoan.resx">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,9 +274,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormDoiMatKhau.resx">
       <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\PayForm.resx">
-      <DependentUpon>PayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

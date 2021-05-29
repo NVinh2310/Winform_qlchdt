@@ -14,7 +14,8 @@ namespace QuanLyPhuKienDienTu.View
 {
     public partial class FormThuongHieu : Form
     {
-        
+        public delegate void MyDel();
+        public MyDel del { get; set; }
         private int flagluu = 0;
         public FormThuongHieu()
         {
@@ -226,6 +227,11 @@ namespace QuanLyPhuKienDienTu.View
                 MessageBox.Show("Để Xóa Thương Hiệu Này, Cần xóa Sản phẩm và các hóa đơn có liên quan");
             }    
             loadDL();
+        }
+
+        private void FormThuongHieu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            del();
         }
     }
 }

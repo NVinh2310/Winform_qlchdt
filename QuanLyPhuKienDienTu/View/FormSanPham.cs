@@ -14,6 +14,9 @@ namespace QuanLyPhuKienDienTu.View
 {
     public partial class FormSanPham : Form
     {
+        public delegate void MyDel();
+        public MyDel del { get; set; }
+
         private int flagluu = 0;
         public FormSanPham()
         {
@@ -357,6 +360,11 @@ namespace QuanLyPhuKienDienTu.View
         {
             txtTimKiem.Text = "";
             LoadDL();
+        }
+
+        private void FormSanPham_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            del();
         }
     }
 }
