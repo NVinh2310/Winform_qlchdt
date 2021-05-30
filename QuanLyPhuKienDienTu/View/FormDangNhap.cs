@@ -19,6 +19,11 @@ namespace QuanLyPhuKienDienTu
             InitializeComponent();
         }
 
+        public void Reset() {
+            textBoxUsername.Text = "";
+            textBoxPassword.Text = "";
+        }
+
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             string username = textBoxUsername.Text;
@@ -39,10 +44,20 @@ namespace QuanLyPhuKienDienTu
                     switch (state)
                     {
                         case 0:
-                            MessageBox.Show("Đây là nhân viên");
+                            //Đây là nhân viên
+                            MainForm form1 = new MainForm(false);
+                            form1.del = new MainForm.MyDel(Reset);
+                            this.Hide();
+                            form1.ShowDialog();
+                            this.Show();
                             break;
                         case 1:
-                            MessageBox.Show("Đây là quản lý");
+                            //Đây là quản lý
+                            MainForm form2 = new MainForm(true);
+                            form2.del = new MainForm.MyDel(Reset);
+                            this.Hide();
+                            form2.ShowDialog();
+                            this.Show();
                             break;
                         default:
                             break;
@@ -62,7 +77,11 @@ namespace QuanLyPhuKienDienTu
 
         private void buttonChangePassWord_Click(object sender, EventArgs e)
         {
-
+            FormDoiMatKhau form = new FormDoiMatKhau();
+            form.del = new FormDoiMatKhau.MyDel(Reset);
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

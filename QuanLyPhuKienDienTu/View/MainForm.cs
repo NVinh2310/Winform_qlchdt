@@ -15,6 +15,8 @@ namespace QuanLyPhuKienDienTu
 {
     public partial class MainForm : Form
     {
+        public delegate void MyDel();
+        public MyDel del { get; set; }
         public KhachHang khachHang { get; set; }
 
         public KhachHang khachHang2 { get; set; }
@@ -24,10 +26,16 @@ namespace QuanLyPhuKienDienTu
         static decimal TongTienHoaDonBan ;
         static decimal TongTienHoaDonNhap;
 
-        public MainForm()
+        public MainForm(bool check)
         {
             InitializeComponent();
             LoadData();
+
+            if (check == false)
+            {
+                addAccountToolStrip.Visible = false;
+                manageAccountToolStrip.Visible = false;
+            }
         }
 
         private void LoadData()
@@ -883,6 +891,7 @@ namespace QuanLyPhuKienDienTu
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            del();
             this.Close();
         }
 
@@ -900,6 +909,28 @@ namespace QuanLyPhuKienDienTu
             this.Hide();
             form.ShowDialog();
             this.Show();
+        }
+
+        private void thêmTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormThemTaiKhoan form = new FormThemTaiKhoan();
+            form.del = new FormThemTaiKhoan.MyDel(LoadData);
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void quảnLíTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTaiKhoan form = new FormTaiKhoan();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            del();
         }
     }
 }

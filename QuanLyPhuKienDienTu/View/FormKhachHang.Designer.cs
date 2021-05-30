@@ -63,9 +63,9 @@ namespace QuanLyPhuKienDienTu.View
             this.groupBox1.Controls.Add(this.dgvKhachHang);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(718, 310);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -76,7 +76,7 @@ namespace QuanLyPhuKienDienTu.View
             this.dgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhachHang.Location = new System.Drawing.Point(14, 33);
-            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.RowTemplate.Height = 24;
@@ -98,9 +98,9 @@ namespace QuanLyPhuKienDienTu.View
             this.groupBox2.Controls.Add(this.txtMaKH);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(9, 324);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(383, 201);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -165,7 +165,7 @@ namespace QuanLyPhuKienDienTu.View
             this.txtSĐT.Enabled = false;
             this.txtSĐT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSĐT.Location = new System.Drawing.Point(135, 167);
-            this.txtSĐT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSĐT.Margin = new System.Windows.Forms.Padding(2);
             this.txtSĐT.Name = "txtSĐT";
             this.txtSĐT.Size = new System.Drawing.Size(245, 24);
             this.txtSĐT.TabIndex = 3;
@@ -178,7 +178,7 @@ namespace QuanLyPhuKienDienTu.View
             this.txtDiaChi.Enabled = false;
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Location = new System.Drawing.Point(135, 123);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(245, 24);
             this.txtDiaChi.TabIndex = 2;
@@ -190,7 +190,7 @@ namespace QuanLyPhuKienDienTu.View
             this.txtTenKH.Enabled = false;
             this.txtTenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKH.Location = new System.Drawing.Point(135, 77);
-            this.txtTenKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenKH.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(245, 24);
             this.txtTenKH.TabIndex = 1;
@@ -202,7 +202,7 @@ namespace QuanLyPhuKienDienTu.View
             this.txtMaKH.Enabled = false;
             this.txtMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaKH.Location = new System.Drawing.Point(135, 33);
-            this.txtMaKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaKH.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(245, 24);
             this.txtMaKH.TabIndex = 0;
@@ -222,9 +222,9 @@ namespace QuanLyPhuKienDienTu.View
             this.groupBox3.Controls.Add(this.btnXem);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(410, 324);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(326, 197);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
@@ -234,7 +234,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.btnHuyTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyTim.Location = new System.Drawing.Point(177, 61);
-            this.btnHuyTim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuyTim.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuyTim.Name = "btnHuyTim";
             this.btnHuyTim.Size = new System.Drawing.Size(58, 24);
             this.btnHuyTim.TabIndex = 9;
@@ -245,7 +245,7 @@ namespace QuanLyPhuKienDienTu.View
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(47, 32);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(254, 23);
             this.txtSearch.TabIndex = 8;
@@ -254,7 +254,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.Location = new System.Drawing.Point(98, 61);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(58, 24);
             this.btnTimKiem.TabIndex = 6;
@@ -266,7 +266,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.btnHuy.Enabled = false;
             this.btnHuy.Location = new System.Drawing.Point(221, 150);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(70, 29);
             this.btnHuy.TabIndex = 5;
@@ -278,7 +278,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.btnLuu.Enabled = false;
             this.btnLuu.Location = new System.Drawing.Point(134, 150);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(70, 29);
             this.btnLuu.TabIndex = 4;
@@ -289,7 +289,7 @@ namespace QuanLyPhuKienDienTu.View
             // btnXoa
             // 
             this.btnXoa.Location = new System.Drawing.Point(47, 150);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(70, 29);
             this.btnXoa.TabIndex = 3;
@@ -300,7 +300,7 @@ namespace QuanLyPhuKienDienTu.View
             // btnSua
             // 
             this.btnSua.Location = new System.Drawing.Point(221, 107);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(70, 29);
             this.btnSua.TabIndex = 2;
@@ -311,7 +311,7 @@ namespace QuanLyPhuKienDienTu.View
             // btnThem
             // 
             this.btnThem.Location = new System.Drawing.Point(134, 107);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(70, 29);
             this.btnThem.TabIndex = 1;
@@ -322,7 +322,7 @@ namespace QuanLyPhuKienDienTu.View
             // btnXem
             // 
             this.btnXem.Location = new System.Drawing.Point(47, 107);
-            this.btnXem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXem.Margin = new System.Windows.Forms.Padding(2);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(70, 29);
             this.btnXem.TabIndex = 0;
@@ -338,7 +338,7 @@ namespace QuanLyPhuKienDienTu.View
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Khách Hàng";
