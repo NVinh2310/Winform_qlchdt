@@ -51,6 +51,12 @@ namespace QuanLyPhuKienDienTu
         // Set ComboBox trong tab Bán hàng
         private void setComboBox() 
         {
+            TB_cbbSDT.Items.Clear();
+            TB_cbbLoai.Items.Clear();
+            TN_cbbTimTH.Items.Clear();
+            TBH_txtSDT.Items.Clear();
+            TB_cbbTH.Items.Clear();
+
             TB_cbbLoai.Items.Add(new CBBItem
             {
                 Value = 0,
@@ -423,6 +429,10 @@ namespace QuanLyPhuKienDienTu
             TBH_txtTLBH.Text = i.ThoiLuongBaoHanh.ToString();
             TBH_txtGia.Text = i.GiaBan.ToString();
             TBH_txtLoai.Text = i.TenLoai;
+            
+
+
+
             DateTime HHBH = ((DateTime)TBH_dgvSanPham.CurrentRow.Cells["NgayBan"].Value).AddDays(i.ThoiLuongBaoHanh);
             TBH_txtHHBH.Text = HHBH.ToString();
             ChiTietHoaDonBan y = BLL.BLL_HoaDonBanChiTiet.Instance.GetHoaDonBanChiTiet((int)TBH_dgvSanPham.CurrentRow.Cells["MaHoaDonBanChiTiet"].Value);
@@ -434,7 +444,8 @@ namespace QuanLyPhuKienDienTu
                 TBH_rtxtGhiChu.Text = y.GhiChu + "\n- Ngày bảo hành:" + DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year + "\n";
             TBH_buttonLuu.Enabled =true;
             TBH_buttonHuy.Enabled = true;
-
+            TBH_dgvSanPham.Columns[0].Visible = false;
+            TBH_dgvSanPham.Columns[1].Visible = false;
         }
 
         // Load thông tin khách hàng
@@ -653,7 +664,8 @@ namespace QuanLyPhuKienDienTu
 
             SetShow(TN_dgvTH);
             LoadSanPhamView3();
-            
+
+            buttonQuayLai.Enabled = true;
             TN_buttonThemSPMoi.Enabled = true;
             TN_buttonThem.Enabled = true;
             TN_buttonXoa.Enabled = true;
@@ -662,6 +674,7 @@ namespace QuanLyPhuKienDienTu
         public void showThuongHieu()
         {
             TN_dgvTH.DataSource = BLL.BLL_ThuongHieu.Instance.GetListThuongHieu();
+            TN_dgvTH.Columns[0].Visible = false;
             TN_dgvTH.Columns[3].Visible = false;
             TN_dgvTH.Columns[4].Visible = false;
             buttonQuayLai.Enabled = false;
