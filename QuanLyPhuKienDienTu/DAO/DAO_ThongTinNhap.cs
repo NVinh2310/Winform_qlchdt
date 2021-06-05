@@ -54,28 +54,7 @@ namespace QuanLyPhuKienDienTu.DAO
             }
         }
 
-        public ThuongHieu ThongTinThuongHieu(int id)
-        {
-            ThuongHieu thuongHieu = new ThuongHieu();
-            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
-            {
-                var query = from hoadon in db.HoaDonNhaps
-                            join thuonghieu in db.ThuongHieux on hoadon.MaThuongHieu equals thuonghieu.MaThuongHieu
-                            where hoadon.MaHoaDonNhap == id
-                            select new 
-                            {
-                                TenThuongHieu = thuonghieu.TenThuongHieu,
-                                XuatXu = thuonghieu.XuatXu
-                            };
-                
-                foreach(var item in query)
-                {
-                    thuongHieu.TenThuongHieu = item.TenThuongHieu;
-                    thuongHieu.XuatXu = item.XuatXu;
-                }
-            }
-            return thuongHieu;
-        }
+        
 
         public List<ChiTiet> ThongTinSanPham(int id)
         {

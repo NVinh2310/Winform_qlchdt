@@ -95,7 +95,7 @@ namespace QuanLyPhuKienDienTu.View
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(954, 125);
+            this.groupBox1.Size = new System.Drawing.Size(1159, 125);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Chi Tiết Sản Phẩm";
@@ -105,7 +105,7 @@ namespace QuanLyPhuKienDienTu.View
             this.txtBaoHanh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBaoHanh.Enabled = false;
             this.txtBaoHanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBaoHanh.Location = new System.Drawing.Point(763, 97);
+            this.txtBaoHanh.Location = new System.Drawing.Point(968, 97);
             this.txtBaoHanh.Margin = new System.Windows.Forms.Padding(2);
             this.txtBaoHanh.Name = "txtBaoHanh";
             this.txtBaoHanh.Size = new System.Drawing.Size(175, 23);
@@ -128,7 +128,7 @@ namespace QuanLyPhuKienDienTu.View
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(680, 97);
+            this.label9.Location = new System.Drawing.Point(885, 97);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 17);
@@ -140,7 +140,7 @@ namespace QuanLyPhuKienDienTu.View
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(680, 75);
+            this.label8.Location = new System.Drawing.Point(885, 75);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 17);
@@ -152,7 +152,7 @@ namespace QuanLyPhuKienDienTu.View
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(680, 53);
+            this.label7.Location = new System.Drawing.Point(885, 53);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 17);
@@ -164,7 +164,7 @@ namespace QuanLyPhuKienDienTu.View
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(680, 31);
+            this.label6.Location = new System.Drawing.Point(885, 31);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 17);
@@ -268,7 +268,7 @@ namespace QuanLyPhuKienDienTu.View
             this.txtMoTa.Location = new System.Drawing.Point(325, 93);
             this.txtMoTa.Margin = new System.Windows.Forms.Padding(2);
             this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.Size = new System.Drawing.Size(330, 23);
+            this.txtMoTa.Size = new System.Drawing.Size(535, 23);
             this.txtMoTa.TabIndex = 11;
             // 
             // txtMauSac
@@ -280,7 +280,7 @@ namespace QuanLyPhuKienDienTu.View
             this.txtMauSac.Location = new System.Drawing.Point(325, 60);
             this.txtMauSac.Margin = new System.Windows.Forms.Padding(2);
             this.txtMauSac.Name = "txtMauSac";
-            this.txtMauSac.Size = new System.Drawing.Size(330, 23);
+            this.txtMauSac.Size = new System.Drawing.Size(535, 23);
             this.txtMauSac.TabIndex = 12;
             // 
             // txtTenSP
@@ -292,7 +292,7 @@ namespace QuanLyPhuKienDienTu.View
             this.txtTenSP.Location = new System.Drawing.Point(325, 28);
             this.txtTenSP.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.Size = new System.Drawing.Size(330, 23);
+            this.txtTenSP.Size = new System.Drawing.Size(535, 23);
             this.txtTenSP.TabIndex = 13;
             // 
             // txtSL
@@ -300,7 +300,7 @@ namespace QuanLyPhuKienDienTu.View
             this.txtSL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSL.Enabled = false;
             this.txtSL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSL.Location = new System.Drawing.Point(763, 73);
+            this.txtSL.Location = new System.Drawing.Point(968, 73);
             this.txtSL.Margin = new System.Windows.Forms.Padding(2);
             this.txtSL.Name = "txtSL";
             this.txtSL.Size = new System.Drawing.Size(175, 23);
@@ -312,7 +312,7 @@ namespace QuanLyPhuKienDienTu.View
             this.txtGiaNhap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGiaNhap.Enabled = false;
             this.txtGiaNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiaNhap.Location = new System.Drawing.Point(763, 50);
+            this.txtGiaNhap.Location = new System.Drawing.Point(968, 50);
             this.txtGiaNhap.Margin = new System.Windows.Forms.Padding(2);
             this.txtGiaNhap.Name = "txtGiaNhap";
             this.txtGiaNhap.Size = new System.Drawing.Size(175, 23);
@@ -324,7 +324,7 @@ namespace QuanLyPhuKienDienTu.View
             this.txtGiaBan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGiaBan.Enabled = false;
             this.txtGiaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiaBan.Location = new System.Drawing.Point(763, 28);
+            this.txtGiaBan.Location = new System.Drawing.Point(968, 28);
             this.txtGiaBan.Margin = new System.Windows.Forms.Padding(2);
             this.txtGiaBan.Name = "txtGiaBan";
             this.txtGiaBan.Size = new System.Drawing.Size(175, 23);
@@ -341,7 +341,7 @@ namespace QuanLyPhuKienDienTu.View
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(954, 269);
+            this.groupBox2.Size = new System.Drawing.Size(1159, 269);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Sản Phẩm";
@@ -357,14 +357,14 @@ namespace QuanLyPhuKienDienTu.View
             this.dgvSanPham.RowHeadersWidth = 51;
             this.dgvSanPham.RowTemplate.Height = 24;
             this.dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSanPham.Size = new System.Drawing.Size(950, 248);
+            this.dgvSanPham.Size = new System.Drawing.Size(1155, 248);
             this.dgvSanPham.TabIndex = 0;
             // 
             // btnXem
             // 
             this.btnXem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXem.Location = new System.Drawing.Point(62, 150);
+            this.btnXem.Location = new System.Drawing.Point(164, 150);
             this.btnXem.Margin = new System.Windows.Forms.Padding(2);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(64, 32);
@@ -377,7 +377,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(142, 151);
+            this.btnThem.Location = new System.Drawing.Point(244, 151);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(64, 32);
@@ -390,7 +390,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(222, 152);
+            this.btnSua.Location = new System.Drawing.Point(324, 152);
             this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(64, 32);
@@ -403,7 +403,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(302, 152);
+            this.btnXoa.Location = new System.Drawing.Point(404, 152);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(64, 32);
@@ -417,7 +417,7 @@ namespace QuanLyPhuKienDienTu.View
             this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLuu.Enabled = false;
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(382, 150);
+            this.btnLuu.Location = new System.Drawing.Point(484, 150);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(64, 32);
@@ -431,7 +431,7 @@ namespace QuanLyPhuKienDienTu.View
             this.btnHuy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnHuy.Enabled = false;
             this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Location = new System.Drawing.Point(463, 152);
+            this.btnHuy.Location = new System.Drawing.Point(565, 152);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(64, 32);
@@ -444,7 +444,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(780, 157);
+            this.btnTimKiem.Location = new System.Drawing.Point(882, 157);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(78, 24);
@@ -456,7 +456,7 @@ namespace QuanLyPhuKienDienTu.View
             // txtTimKiem
             // 
             this.txtTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTimKiem.Location = new System.Drawing.Point(548, 160);
+            this.txtTimKiem.Location = new System.Drawing.Point(650, 160);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(221, 20);
@@ -466,7 +466,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(862, 156);
+            this.button1.Location = new System.Drawing.Point(964, 156);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(78, 24);
@@ -479,7 +479,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 496);
+            this.ClientSize = new System.Drawing.Size(1177, 506);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btnTimKiem);

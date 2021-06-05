@@ -138,10 +138,7 @@ namespace QuanLyPhuKienDienTu.BLL
             return result;
         }
 
-        public ThuongHieu ThongTinThuongHieu(int id)
-        {
-            return DAO_ThongTinNhap.Instance.ThongTinThuongHieu(id);
-        }
+        
 
         public List<ChiTiet> ThongTinSanPham(int id)
         {

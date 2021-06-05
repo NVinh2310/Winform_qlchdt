@@ -77,10 +77,6 @@ namespace QuanLyPhuKienDienTu.DAO
                 }
             }
         }
-        internal int GetListKH(string ma, string name)
-        {
-            throw new NotImplementedException();
-        }
 
         public List<KhachHang> GetKhachHangByName(string name)
         {
@@ -185,6 +181,32 @@ namespace QuanLyPhuKienDienTu.DAO
             {
                 return db.KhachHangs.Find(id);
             }    
+        }
+
+        public KhachHang ThongTinKhachHang(int id)
+        {
+            KhachHang khachHang = new KhachHang();
+
+            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
+            {
+                var query = from hoadon in db.HoaDonBans
+                            join khachhang in db.KhachHangs on hoadon.MaKhachHang equals khachhang.MaKhachHang
+                            where hoadon.MaHoaDonBan == id
+                            select new
+                            {
+                                TenKhachHang = khachhang.TenKhachHang,
+                                DiaChi = khachhang.DiaChi,
+                                SoDienThoai = khachhang.SoDienThoai
+                            };
+                foreach (var item in query)
+                {
+                    khachHang.TenKhachHang = item.TenKhachHang;
+                    khachHang.DiaChi = item.DiaChi;
+                    khachHang.SoDienThoai = item.SoDienThoai;
+                }
+            }
+
+            return khachHang;
         }
     }
 }

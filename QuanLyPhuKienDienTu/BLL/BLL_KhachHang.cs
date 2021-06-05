@@ -23,6 +23,11 @@ namespace QuanLyPhuKienDienTu.BLL
 
         private BLL_KhachHang() { }
 
+        public KhachHang ThongTinKhachHang(int id)
+        {
+            return DAO_KhachHang.Instance.ThongTinKhachHang(id);
+        }
+
         public List<KhachHang> GetKhachHang()
         {
             return DAO_KhachHang.Instance.GetKhachHang();

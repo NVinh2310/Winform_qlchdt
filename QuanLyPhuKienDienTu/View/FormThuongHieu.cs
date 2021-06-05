@@ -31,7 +31,7 @@ namespace QuanLyPhuKienDienTu.View
         public void loadDL()
         {
             dgvThuongHieu.DataSource = BLL.BLL_ThuongHieu.Instance.GetListThuongHieu();
-            
+            Process.InvisibleAttributes(dgvThuongHieu, new string[] { "MaThuongHieu" });
             txtMaTH.DataBindings.Clear();
             txtMaTH.DataBindings.Add("Text", dgvThuongHieu.DataSource, "MaThuongHieu");
             txtTenTH.DataBindings.Clear();

@@ -393,6 +393,7 @@ namespace QuanLyPhuKienDienTu
             try
             {
                 FormKhachHang fKH = new FormKhachHang();
+                fKH.del = new FormKhachHang.MyDel(LoadData);
                 fKH.ShowDialog();
                 int mkhMax = BLL.BLL_KhachHang.Instance.GetMaKhachHangMax();
                 khachHang = BLL.BLL_KhachHang.Instance.GetKhachHangByID(mkhMax);
@@ -713,6 +714,7 @@ namespace QuanLyPhuKienDienTu
             {
                 buttonQuayLai_Click(sender, e);
                 FormThuongHieu fTH = new FormThuongHieu();
+                fTH.del = new FormThuongHieu.MyDel(LoadData);
                 fTH.ShowDialog();
                 showThuongHieu();
             }
@@ -764,6 +766,7 @@ namespace QuanLyPhuKienDienTu
         private void TN_buttonThemSPMoi_Click(object sender, EventArgs e)
         {
             FormSanPham fSP = new FormSanPham();
+            fSP.del = new FormSanPham.MyDel(LoadData);
             fSP.ShowDialog();
             show();
             showSPcuaThuongHieu();

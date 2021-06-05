@@ -118,43 +118,6 @@ namespace QuanLyPhuKienDienTu.DAO
             return sp;
 
         }
-        public List<ThuongHieu> GetThuongHieu()
-        {
-            List<ThuongHieu> th = new List<ThuongHieu>();
-            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
-            {
-                
-                foreach (var item in db.ThuongHieux.ToList())
-                {
-                    th.Add(new ThuongHieu()
-                    {
-                        MaThuongHieu = item.MaThuongHieu,
-                        TenThuongHieu = item.TenThuongHieu,
-                        XuatXu = item.XuatXu,
-                        
-                    });
-
-                }
-            }
-            return th;
-        }
-        public List<Loai> GetLoai()
-        {
-            List<Loai> ls = new List<Loai>();
-            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
-            {
-                foreach (var item in db.Loais.ToList())
-                {
-                    ls.Add(new Loai()
-                    {
-                        MaLoai = item.MaLoai,
-                        TenLoai = item.TenLoai
-                    });
-                }
-            }
-            return ls;
-
-        }
         public bool CheckMaSP(int masp)
         {
             using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())

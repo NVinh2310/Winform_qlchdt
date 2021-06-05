@@ -62,7 +62,7 @@ namespace QuanLyPhuKienDienTu.View
         }
         public void SetCBBThuongHieu()
         {
-            List<ThuongHieu> list = BLL_SanPham.Instance.GetThuongHieu();
+            List<ThuongHieu> list = BLL_ThuongHieu.Instance.GetListThuongHieu();
             if(cbbMaTH.Items != null)
             {
                 cbbMaTH.Items.Clear();
@@ -80,7 +80,7 @@ namespace QuanLyPhuKienDienTu.View
         }
         public void SetCBBLoai()
         {
-            List<Loai> data = BLL_SanPham.Instance.GetLoai();
+            List<Loai> data = BLL_Loai.Instance.GetListLoai();
             if(cbbMaL.Items != null)
             {
                 cbbMaL.Items.Clear();

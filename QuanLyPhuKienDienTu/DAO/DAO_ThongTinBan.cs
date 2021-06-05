@@ -68,30 +68,7 @@ namespace QuanLyPhuKienDienTu.DAO
         }
 
         //Lấy thông tin khách hàng bằng mã hóa đơn bán
-        public KhachHang ThongTinKhachHang(int id)
-        {
-            KhachHang khachHang = new KhachHang();
-
-            using (QuanLyPhuKienDienTuEntities db = new QuanLyPhuKienDienTuEntities())
-            {
-                var query = from hoadon in db.HoaDonBans
-                            join khachhang in db.KhachHangs on hoadon.MaKhachHang equals khachhang.MaKhachHang
-                            where hoadon.MaHoaDonBan == id
-                            select new { 
-                                TenKhachHang = khachhang.TenKhachHang,
-                                DiaChi = khachhang.DiaChi,
-                                SoDienThoai = khachhang.SoDienThoai
-                            };
-                foreach (var item in query)
-                {
-                    khachHang.TenKhachHang = item.TenKhachHang;
-                    khachHang.DiaChi = item.DiaChi;
-                    khachHang.SoDienThoai = item.SoDienThoai;
-                }
-            }
-
-            return khachHang;
-        }
+        
 
         //Lấy thông tin sản phẩm bằng mã hóa đơn bán
         public List<ChiTiet> ThongTinSanPham(int id)

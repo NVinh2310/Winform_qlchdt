@@ -701,6 +701,7 @@ namespace QuanLyPhuKienDienTu
             this.TB_dgvSanPham.Location = new System.Drawing.Point(10, 22);
             this.TB_dgvSanPham.Margin = new System.Windows.Forms.Padding(2);
             this.TB_dgvSanPham.Name = "TB_dgvSanPham";
+            this.TB_dgvSanPham.ReadOnly = true;
             this.TB_dgvSanPham.RowHeadersWidth = 51;
             this.TB_dgvSanPham.RowTemplate.Height = 24;
             this.TB_dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -923,7 +924,7 @@ namespace QuanLyPhuKienDienTu
             // TB_txtTongTien
             // 
             this.TB_txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_txtTongTien.Location = new System.Drawing.Point(166, 581);
+            this.TB_txtTongTien.Location = new System.Drawing.Point(250, 599);
             this.TB_txtTongTien.Name = "TB_txtTongTien";
             this.TB_txtTongTien.ReadOnly = true;
             this.TB_txtTongTien.Size = new System.Drawing.Size(160, 24);
@@ -946,7 +947,7 @@ namespace QuanLyPhuKienDienTu
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(82, 583);
+            this.label7.Location = new System.Drawing.Point(166, 601);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 18);
             this.label7.TabIndex = 14;
@@ -993,7 +994,7 @@ namespace QuanLyPhuKienDienTu
             // 
             this.TB_ButtonThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_ButtonThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TB_ButtonThanhToan.Location = new System.Drawing.Point(208, 617);
+            this.TB_ButtonThanhToan.Location = new System.Drawing.Point(292, 635);
             this.TB_ButtonThanhToan.Name = "TB_ButtonThanhToan";
             this.TB_ButtonThanhToan.Size = new System.Drawing.Size(118, 38);
             this.TB_ButtonThanhToan.TabIndex = 38;
@@ -1953,6 +1954,7 @@ namespace QuanLyPhuKienDienTu
             this.TN_dgvTH.Location = new System.Drawing.Point(8, 28);
             this.TN_dgvTH.Margin = new System.Windows.Forms.Padding(2);
             this.TN_dgvTH.Name = "TN_dgvTH";
+            this.TN_dgvTH.ReadOnly = true;
             this.TN_dgvTH.RowHeadersVisible = false;
             this.TN_dgvTH.RowHeadersWidth = 51;
             this.TN_dgvTH.RowTemplate.Height = 24;
@@ -1999,7 +2001,7 @@ namespace QuanLyPhuKienDienTu
             // TN_txtTongGia
             // 
             this.TN_txtTongGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TN_txtTongGia.Location = new System.Drawing.Point(166, 554);
+            this.TN_txtTongGia.Location = new System.Drawing.Point(256, 594);
             this.TN_txtTongGia.Name = "TN_txtTongGia";
             this.TN_txtTongGia.ReadOnly = true;
             this.TN_txtTongGia.Size = new System.Drawing.Size(160, 24);
@@ -2011,7 +2013,7 @@ namespace QuanLyPhuKienDienTu
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(81, 557);
+            this.label40.Location = new System.Drawing.Point(171, 597);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(80, 18);
             this.label40.TabIndex = 14;
@@ -2058,7 +2060,7 @@ namespace QuanLyPhuKienDienTu
             // 
             this.TN_buttonThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TN_buttonThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TN_buttonThanhToan.Location = new System.Drawing.Point(207, 591);
+            this.TN_buttonThanhToan.Location = new System.Drawing.Point(297, 631);
             this.TN_buttonThanhToan.Name = "TN_buttonThanhToan";
             this.TN_buttonThanhToan.Size = new System.Drawing.Size(118, 38);
             this.TN_buttonThanhToan.TabIndex = 38;

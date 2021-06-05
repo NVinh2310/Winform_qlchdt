@@ -37,14 +37,6 @@ namespace QuanLyPhuKienDienTu.BLL
         {
             return DAO_SanPham.Instance.GetSanPhamByName(name);
         }
-        public List<ThuongHieu> GetThuongHieu()
-        {
-            return DAO_SanPham.Instance.GetThuongHieu();
-        }
-        public List<Loai> GetLoai()
-        {
-            return DAO_SanPham.Instance.GetLoai();
-        }
         public bool ThemSanPham(SanPham s)
         {
             return DAO_SanPham.Instance.ThemSanPham(s);

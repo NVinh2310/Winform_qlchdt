@@ -25,7 +25,7 @@ namespace QuanLyPhuKienDienTu.View
 
         private void LoadThuongHieu()
         {
-            ThuongHieu thuongHieu = BLL_ThongTinNhap.Instance.ThongTinThuongHieu(MaHoaDon);
+            ThuongHieu thuongHieu = BLL_ThuongHieu.Instance.ThongTinThuongHieu(MaHoaDon);
             lbName.Text = thuongHieu.TenThuongHieu;
             lbOrigin.Text = thuongHieu.XuatXu;
         }

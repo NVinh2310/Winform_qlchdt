@@ -25,7 +25,7 @@ namespace QuanLyPhuKienDienTu.View
 
         private void LoadClient()
         {
-            KhachHang khachHang = BLL_ThongTinBan.Instance.ThongTinKhachHang(MaHoaDon);
+            KhachHang khachHang = BLL_KhachHang.Instance.ThongTinKhachHang(MaHoaDon);
             lbName.Text = khachHang.TenKhachHang;
             lbAddress.Text = khachHang.DiaChi;
             lbPhone.Text = khachHang.SoDienThoai;

@@ -24,6 +24,10 @@ namespace QuanLyPhuKienDienTu.BLL
         {
             return DAO.DAO_ThuongHieu.Instance.GetListThuongHieu();
         }
+        public ThuongHieu ThongTinThuongHieu(int id)
+        {
+            return DAO_ThuongHieu.Instance.ThongTinThuongHieu(id);
+        }
 
         public List<ThuongHieu> GetListTH(int maTH, string name)
         {

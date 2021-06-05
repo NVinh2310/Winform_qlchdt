@@ -98,10 +98,7 @@ namespace QuanLyPhuKienDienTu.BLL
         }
 
 
-        public KhachHang ThongTinKhachHang(int id)
-        {
-            return DAO_ThongTinBan.Instance.ThongTinKhachHang(id);
-        }
+        
 
         public List<ThongTinBan> SapXepTheoTen(List<ThongTinBan> data)
         {
