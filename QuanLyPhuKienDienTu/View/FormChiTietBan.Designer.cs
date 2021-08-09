@@ -47,54 +47,57 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(90, 32);
+            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.Location = new System.Drawing.Point(90, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 20);
+            this.label1.Size = new System.Drawing.Size(160, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên khách hàng:";
             // 
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(263, 32);
+            this.lbName.Location = new System.Drawing.Point(263, 24);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(51, 20);
+            this.lbName.Size = new System.Drawing.Size(64, 25);
             this.lbName.TabIndex = 1;
             this.lbName.Text = "label2";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(90, 113);
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(597, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 20);
+            this.label3.Size = new System.Drawing.Size(126, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Số điện thoại";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(90, 72);
+            this.label4.ForeColor = System.Drawing.Color.Blue;
+            this.label4.Location = new System.Drawing.Point(90, 64);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 20);
+            this.label4.Size = new System.Drawing.Size(77, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "Địa chỉ:";
             // 
             // lbAddress
             // 
             this.lbAddress.AutoSize = true;
-            this.lbAddress.Location = new System.Drawing.Point(263, 72);
+            this.lbAddress.Location = new System.Drawing.Point(263, 64);
             this.lbAddress.Name = "lbAddress";
-            this.lbAddress.Size = new System.Drawing.Size(51, 20);
+            this.lbAddress.Size = new System.Drawing.Size(64, 25);
             this.lbAddress.TabIndex = 4;
             this.lbAddress.Text = "label5";
             // 
             // lbPhone
             // 
             this.lbPhone.AutoSize = true;
-            this.lbPhone.Location = new System.Drawing.Point(263, 113);
+            this.lbPhone.Location = new System.Drawing.Point(746, 24);
             this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(51, 20);
+            this.lbPhone.Size = new System.Drawing.Size(64, 25);
             this.lbPhone.TabIndex = 5;
             this.lbPhone.Text = "label6";
             // 
@@ -110,7 +113,7 @@
             this.lvDetail.FullRowSelect = true;
             this.lvDetail.GridLines = true;
             this.lvDetail.HideSelection = false;
-            this.lvDetail.Location = new System.Drawing.Point(58, 158);
+            this.lvDetail.Location = new System.Drawing.Point(57, 107);
             this.lvDetail.Name = "lvDetail";
             this.lvDetail.Size = new System.Drawing.Size(898, 407);
             this.lvDetail.TabIndex = 38;
@@ -148,20 +151,22 @@
             // 
             // exitBtn
             // 
+            this.exitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.exitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitBtn.Location = new System.Drawing.Point(881, 571);
+            this.exitBtn.Location = new System.Drawing.Point(840, 533);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(75, 36);
+            this.exitBtn.Size = new System.Drawing.Size(121, 36);
             this.exitBtn.TabIndex = 39;
             this.exitBtn.Text = "Thoát";
-            this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FormChiTietBan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 622);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ClientSize = new System.Drawing.Size(1015, 585);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.lvDetail);
             this.Controls.Add(this.lbPhone);

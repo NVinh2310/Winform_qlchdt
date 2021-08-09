@@ -67,7 +67,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(492, 47);
+            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.Location = new System.Drawing.Point(58, 91);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(160, 25);
@@ -76,57 +77,60 @@
             // 
             // txbName
             // 
-            this.txbName.Location = new System.Drawing.Point(622, 44);
+            this.txbName.Location = new System.Drawing.Point(216, 91);
             this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(185, 30);
+            this.txbName.Size = new System.Drawing.Size(200, 30);
             this.txbName.TabIndex = 3;
             // 
             // btnSearchName
             // 
+            this.btnSearchName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSearchName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchName.Location = new System.Drawing.Point(813, 44);
+            this.btnSearchName.Location = new System.Drawing.Point(422, 88);
             this.btnSearchName.Name = "btnSearchName";
-            this.btnSearchName.Size = new System.Drawing.Size(63, 26);
+            this.btnSearchName.Size = new System.Drawing.Size(63, 33);
             this.btnSearchName.TabIndex = 4;
             this.btnSearchName.Text = "Tìm";
-            this.btnSearchName.UseVisualStyleBackColor = true;
+            this.btnSearchName.UseVisualStyleBackColor = false;
             this.btnSearchName.Click += new System.EventHandler(this.btnSearchName_Click);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(164, 44);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(261, 30);
+            this.dateTimePicker1.Size = new System.Drawing.Size(321, 30);
             this.dateTimePicker1.TabIndex = 5;
             // 
             // btnSearchDate
             // 
             this.btnSearchDate.AccessibleDescription = "";
             this.btnSearchDate.AccessibleName = "";
+            this.btnSearchDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnSearchDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchDate.Location = new System.Drawing.Point(362, 91);
+            this.btnSearchDate.Location = new System.Drawing.Point(823, 39);
             this.btnSearchDate.Name = "btnSearchDate";
-            this.btnSearchDate.Size = new System.Drawing.Size(63, 26);
+            this.btnSearchDate.Size = new System.Drawing.Size(95, 33);
             this.btnSearchDate.TabIndex = 6;
             this.btnSearchDate.Text = "Tìm";
-            this.btnSearchDate.UseVisualStyleBackColor = true;
+            this.btnSearchDate.UseVisualStyleBackColor = false;
             this.btnSearchDate.Click += new System.EventHandler(this.btnSearchDate_Click);
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Location = new System.Drawing.Point(800, 559);
+            this.btnExit.Location = new System.Drawing.Point(766, 559);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(76, 32);
+            this.btnExit.Size = new System.Drawing.Size(110, 32);
             this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label2.ForeColor = System.Drawing.Color.Blue;
             this.label2.Location = new System.Drawing.Point(353, 559);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(305, 25);
@@ -135,19 +139,21 @@
             // 
             // btnShow
             // 
+            this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnShow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShow.Location = new System.Drawing.Point(88, 559);
+            this.btnShow.Location = new System.Drawing.Point(88, 555);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(76, 32);
+            this.btnShow.Size = new System.Drawing.Size(113, 32);
             this.btnShow.TabIndex = 9;
             this.btnShow.Text = "Tất cả";
-            this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.UseVisualStyleBackColor = false;
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(84, 47);
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(58, 47);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 25);
@@ -157,7 +163,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(84, 91);
+            this.label4.ForeColor = System.Drawing.Color.Blue;
+            this.label4.Location = new System.Drawing.Point(503, 43);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(126, 25);
@@ -167,23 +174,24 @@
             // cbbDate
             // 
             this.cbbDate.FormattingEnabled = true;
-            this.cbbDate.Location = new System.Drawing.Point(194, 88);
+            this.cbbDate.Location = new System.Drawing.Point(645, 39);
             this.cbbDate.Name = "cbbDate";
-            this.cbbDate.Size = new System.Drawing.Size(145, 33);
+            this.cbbDate.Size = new System.Drawing.Size(169, 33);
             this.cbbDate.TabIndex = 12;
             // 
             // cbbSort
             // 
             this.cbbSort.FormattingEnabled = true;
-            this.cbbSort.Location = new System.Drawing.Point(622, 88);
+            this.cbbSort.Location = new System.Drawing.Point(645, 88);
             this.cbbSort.Name = "cbbSort";
-            this.cbbSort.Size = new System.Drawing.Size(172, 33);
+            this.cbbSort.Size = new System.Drawing.Size(169, 33);
             this.cbbSort.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(492, 91);
+            this.label5.ForeColor = System.Drawing.Color.Blue;
+            this.label5.Location = new System.Drawing.Point(503, 91);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(134, 25);
@@ -194,19 +202,21 @@
             // 
             this.btnSort.AccessibleDescription = "";
             this.btnSort.AccessibleName = "";
+            this.btnSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnSort.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSort.Location = new System.Drawing.Point(800, 90);
+            this.btnSort.Location = new System.Drawing.Point(823, 88);
             this.btnSort.Name = "btnSort";
-            this.btnSort.Size = new System.Drawing.Size(76, 27);
+            this.btnSort.Size = new System.Drawing.Size(95, 34);
             this.btnSort.TabIndex = 13;
             this.btnSort.Text = "Sắp xếp";
-            this.btnSort.UseVisualStyleBackColor = true;
+            this.btnSort.UseVisualStyleBackColor = false;
             this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
             // 
             // FormHoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(961, 620);
             this.Controls.Add(this.cbbSort);
             this.Controls.Add(this.label5);

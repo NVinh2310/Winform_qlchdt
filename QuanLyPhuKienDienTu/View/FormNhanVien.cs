@@ -35,6 +35,9 @@ namespace QuanLyPhuKienDienTu.View
         private void LoadNhanVien()
         {
             dataViewStaff.DataSource = BLL_NhanVien.Instance.GetNhanVien();
+            dataViewStaff.Columns[0].Visible = false;
+            dataViewStaff.Columns[4].Visible = false;
+            dataViewStaff.Columns[5].Visible = false;
             // Process.InvisibleAttributes(dataViewStaff, new object[] { "IDAccount" });
         }
         private void AddBinding()

@@ -665,6 +665,8 @@ namespace QuanLyPhuKienDienTu
             SetShow(TN_dgvTH);
             LoadSanPhamView3();
 
+            //MessageBox.Show(TN_dgvTH.CurrentRow.Cells[1].Value.ToString());
+
             buttonQuayLai.Enabled = true;
             TN_buttonThemSPMoi.Enabled = true;
             TN_buttonThem.Enabled = true;
@@ -837,6 +839,7 @@ namespace QuanLyPhuKienDienTu
 
                     thuongHieu = BLL.BLL_ThuongHieu.Instance.GetThuongHieuByTen(TN_cbbTimTH.Text);
 
+
                     showSPcuaThuongHieu();
                     buttonTimTH.Enabled = false;
                     buttonQuayLai.Enabled = true;
@@ -948,5 +951,7 @@ namespace QuanLyPhuKienDienTu
         {
             del();
         }
+
+        
     }
 }

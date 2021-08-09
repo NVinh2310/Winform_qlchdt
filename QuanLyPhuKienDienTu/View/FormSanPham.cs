@@ -22,12 +22,13 @@ namespace QuanLyPhuKienDienTu.View
         {
             InitializeComponent();
             LoadSanPham();
+            LoadDL();
             SetCBBThuongHieu();
             SetCBBLoai();
         }
         public void LoadSanPham()
         {
-            dgvSanPham.DataSource = BLL_SanPham.Instance.GetSanPham_Views("","","","");
+            dgvSanPham.DataSource = BLL_SanPham.Instance.GetSanPham_Views("All","All","All","All");
             Process.InvisibleAttributes(dgvSanPham, new object[] { "MaSanPham" });
         }
         public void LoadDL()

@@ -44,115 +44,123 @@
             // 
             // cbbName
             // 
-            this.cbbName.Location = new System.Drawing.Point(180, 33);
+            this.cbbName.Location = new System.Drawing.Point(270, 32);
             this.cbbName.Name = "cbbName";
-            this.cbbName.Size = new System.Drawing.Size(265, 28);
+            this.cbbName.Size = new System.Drawing.Size(344, 33);
             this.cbbName.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 36);
+            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.Location = new System.Drawing.Point(78, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 20);
+            this.label1.Size = new System.Drawing.Size(156, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Chọn nhân viên:";
             // 
             // txbUsername
             // 
-            this.txbUsername.Location = new System.Drawing.Point(157, 19);
+            this.txbUsername.Location = new System.Drawing.Point(270, 129);
             this.txbUsername.Name = "txbUsername";
-            this.txbUsername.Size = new System.Drawing.Size(208, 26);
+            this.txbUsername.Size = new System.Drawing.Size(344, 30);
             this.txbUsername.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 22);
+            this.label2.ForeColor = System.Drawing.Color.Blue;
+            this.label2.Location = new System.Drawing.Point(78, 132);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 20);
+            this.label2.Size = new System.Drawing.Size(131, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tên tài khoản";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 70);
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(78, 186);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 20);
+            this.label3.Size = new System.Drawing.Size(93, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "Mật khẩu";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 119);
+            this.label4.ForeColor = System.Drawing.Color.Blue;
+            this.label4.Location = new System.Drawing.Point(78, 239);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 20);
+            this.label4.Size = new System.Drawing.Size(168, 25);
             this.label4.TabIndex = 5;
             this.label4.Text = "Nhập lại mật khẩu";
             // 
             // txbPassword
             // 
-            this.txbPassword.Location = new System.Drawing.Point(157, 70);
+            this.txbPassword.Location = new System.Drawing.Point(270, 183);
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(208, 26);
+            this.txbPassword.Size = new System.Drawing.Size(344, 30);
             this.txbPassword.TabIndex = 6;
             this.txbPassword.UseSystemPasswordChar = true;
             // 
             // txbSubmitPas
             // 
-            this.txbSubmitPas.Location = new System.Drawing.Point(157, 119);
+            this.txbSubmitPas.Location = new System.Drawing.Point(270, 236);
             this.txbSubmitPas.Name = "txbSubmitPas";
-            this.txbSubmitPas.Size = new System.Drawing.Size(208, 26);
+            this.txbSubmitPas.Size = new System.Drawing.Size(344, 30);
             this.txbSubmitPas.TabIndex = 7;
             this.txbSubmitPas.UseSystemPasswordChar = true;
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.exitButton);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.submitButton);
+            this.panel1.Controls.Add(this.cbbName);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txbSubmitPas);
             this.panel1.Controls.Add(this.txbUsername);
             this.panel1.Controls.Add(this.txbPassword);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(23, 81);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(483, 221);
+            this.panel1.Size = new System.Drawing.Size(670, 388);
             this.panel1.TabIndex = 8;
             // 
             // exitButton
             // 
+            this.exitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitButton.Location = new System.Drawing.Point(390, 175);
+            this.exitButton.Location = new System.Drawing.Point(488, 320);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(75, 34);
+            this.exitButton.Size = new System.Drawing.Size(126, 34);
             this.exitButton.TabIndex = 9;
             this.exitButton.Text = "Thoát";
-            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.UseVisualStyleBackColor = false;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // submitButton
             // 
+            this.submitButton.BackColor = System.Drawing.Color.Lime;
             this.submitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.submitButton.Location = new System.Drawing.Point(286, 175);
+            this.submitButton.Location = new System.Drawing.Point(353, 320);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(98, 34);
+            this.submitButton.Size = new System.Drawing.Size(126, 34);
             this.submitButton.TabIndex = 8;
-            this.submitButton.Text = "Xác nhận";
-            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Text = "Lưu";
+            this.submitButton.UseVisualStyleBackColor = false;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // FormThemTaiKhoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 321);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.ClientSize = new System.Drawing.Size(694, 412);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbbName);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormThemTaiKhoan";
@@ -161,7 +169,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

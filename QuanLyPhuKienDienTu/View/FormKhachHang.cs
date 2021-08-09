@@ -61,10 +61,20 @@ namespace QuanLyPhuKienDienTu.View
         
         private void btnXem_Click(object sender, EventArgs e)
         {
-            int mkh = Convert.ToInt32(dgvKhachHang.CurrentRow.Cells["MaKhachHang"].Value.ToString());
-           dgvKhachHang.DataSource= DAO.DAO_HoaDonBanChiTiet.Instance.GetSP(mkh);
-            btnHuy.Enabled = true;
-            btnXem.Enabled = false;
+            try
+            {
+                int mkh = Convert.ToInt32(dgvKhachHang.CurrentRow.Cells["MaKhachHang"].Value.ToString());
+                dgvKhachHang.DataSource = DAO.DAO_HoaDonBanChiTiet.Instance.GetSP(mkh);
+                btnHuy.Enabled = true;
+                btnXem.Enabled = false;
+
+                dgvKhachHang.Columns[0].Visible = false;
+                dgvKhachHang.Columns[1].Visible = false;
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Xóa không thành công !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
