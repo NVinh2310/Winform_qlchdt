@@ -217,8 +217,8 @@ namespace QuanLyPhuKienDienTu.DAO
                     MauSac =i.MauSac,
                     MoTa =i.MoTa,
                     ThoiLuongBaoHanh=i.ThoiLuongBaoHanh,
-                    GiaBan= (decimal)i.GiaBan,
-                    GiaNhap = (decimal)i.GiaNhap
+                    GiaBan= i.GiaBan,
+                    GiaNhap = i.GiaNhap
                 });
                 return list.ToList();
             }

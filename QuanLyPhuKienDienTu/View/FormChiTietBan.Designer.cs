@@ -137,16 +137,19 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Số lượng";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader3.Width = 99;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Đơn giá";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader4.Width = 122;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Thành tiền";
+            this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader8.Width = 169;
             // 
             // exitBtn

@@ -70,6 +70,8 @@ namespace QuanLyPhuKienDienTu.View
 
                 dgvKhachHang.Columns[0].Visible = false;
                 dgvKhachHang.Columns[1].Visible = false;
+
+                dgvKhachHang.Columns["SoLuong"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             catch(Exception)
             {

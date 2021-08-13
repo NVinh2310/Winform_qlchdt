@@ -324,14 +324,14 @@ namespace QuanLyPhuKienDienTu
             // bánHàngToolStripMenuItem
             // 
             this.bánHàngToolStripMenuItem.Name = "bánHàngToolStripMenuItem";
-            this.bánHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.bánHàngToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.bánHàngToolStripMenuItem.Text = "Bán hàng";
             this.bánHàngToolStripMenuItem.Click += new System.EventHandler(this.bánHàngToolStripMenuItem_Click);
             // 
             // nhậpHàngToolStripMenuItem
             // 
             this.nhậpHàngToolStripMenuItem.Name = "nhậpHàngToolStripMenuItem";
-            this.nhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.nhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.nhậpHàngToolStripMenuItem.Text = "Nhập hàng";
             this.nhậpHàngToolStripMenuItem.Click += new System.EventHandler(this.nhậpHàngToolStripMenuItem_Click);
             // 
@@ -362,7 +362,7 @@ namespace QuanLyPhuKienDienTu
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.Controls.Add(this.groupBox8);
             this.panel1.Controls.Add(this.groupBox7);
             this.panel1.Controls.Add(this.groupBox6);
@@ -410,7 +410,7 @@ namespace QuanLyPhuKienDienTu
             // 
             // TB_ButtonKHMoi
             // 
-            this.TB_ButtonKHMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.TB_ButtonKHMoi.BackColor = System.Drawing.Color.LightBlue;
             this.TB_ButtonKHMoi.ForeColor = System.Drawing.Color.Black;
             this.TB_ButtonKHMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.TB_ButtonKHMoi.Location = new System.Drawing.Point(141, 174);
@@ -424,7 +424,7 @@ namespace QuanLyPhuKienDienTu
             // 
             // TB_ButtonTimSDT
             // 
-            this.TB_ButtonTimSDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.TB_ButtonTimSDT.BackColor = System.Drawing.Color.LightBlue;
             this.TB_ButtonTimSDT.ForeColor = System.Drawing.Color.Black;
             this.TB_ButtonTimSDT.Location = new System.Drawing.Point(304, 36);
             this.TB_ButtonTimSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -510,6 +510,7 @@ namespace QuanLyPhuKienDienTu
             // 
             // panel14
             // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel14.Controls.Add(this.TB_cbbLoai);
             this.panel14.Controls.Add(this.label17);
             this.panel14.Controls.Add(this.label3);
@@ -618,7 +619,7 @@ namespace QuanLyPhuKienDienTu
             // 
             // TB_ButtonTimSP
             // 
-            this.TB_ButtonTimSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.TB_ButtonTimSP.BackColor = System.Drawing.Color.LightBlue;
             this.TB_ButtonTimSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_ButtonTimSP.ForeColor = System.Drawing.Color.Black;
             this.TB_ButtonTimSP.Location = new System.Drawing.Point(301, 27);
@@ -632,7 +633,7 @@ namespace QuanLyPhuKienDienTu
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel5.Controls.Add(this.label18);
             this.panel5.Controls.Add(this.numericSoLuongBan);
             this.panel5.Controls.Add(this.TB_ButtonXoa);
@@ -711,11 +712,11 @@ namespace QuanLyPhuKienDienTu
             this.groupBox6.Controls.Add(this.TB_dgvSanPham);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.Color.Black;
-            this.groupBox6.Location = new System.Drawing.Point(4, 5);
+            this.groupBox6.Location = new System.Drawing.Point(3, 5);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox6.Size = new System.Drawing.Size(1151, 305);
+            this.groupBox6.Size = new System.Drawing.Size(1152, 305);
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Danh sách sản phẩm";
@@ -1066,11 +1067,12 @@ namespace QuanLyPhuKienDienTu
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tabPage2.Controls.Add(this.groupBox11);
             this.tabPage2.Controls.Add(this.groupBox10);
             this.tabPage2.Controls.Add(this.groupBox9);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
@@ -1097,7 +1099,7 @@ namespace QuanLyPhuKienDienTu
             // 
             // TBH_buttonTimHD
             // 
-            this.TBH_buttonTimHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.TBH_buttonTimHD.BackColor = System.Drawing.Color.LightBlue;
             this.TBH_buttonTimHD.Location = new System.Drawing.Point(555, 44);
             this.TBH_buttonTimHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBH_buttonTimHD.Name = "TBH_buttonTimHD";
@@ -1182,7 +1184,7 @@ namespace QuanLyPhuKienDienTu
             // 
             // TBH_buttonTimSDT
             // 
-            this.TBH_buttonTimSDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.TBH_buttonTimSDT.BackColor = System.Drawing.Color.LightBlue;
             this.TBH_buttonTimSDT.ForeColor = System.Drawing.Color.Black;
             this.TBH_buttonTimSDT.Location = new System.Drawing.Point(599, 79);
             this.TBH_buttonTimSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1275,10 +1277,10 @@ namespace QuanLyPhuKienDienTu
             // 
             // TBH_rtxtGhiChu
             // 
-            this.TBH_rtxtGhiChu.Location = new System.Drawing.Point(0, 316);
+            this.TBH_rtxtGhiChu.Location = new System.Drawing.Point(36, 316);
             this.TBH_rtxtGhiChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TBH_rtxtGhiChu.Name = "TBH_rtxtGhiChu";
-            this.TBH_rtxtGhiChu.Size = new System.Drawing.Size(783, 394);
+            this.TBH_rtxtGhiChu.Size = new System.Drawing.Size(747, 394);
             this.TBH_rtxtGhiChu.TabIndex = 78;
             this.TBH_rtxtGhiChu.Text = "";
             // 
@@ -1484,7 +1486,7 @@ namespace QuanLyPhuKienDienTu
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tabPage3.Controls.Add(this.groupBox4);
             this.tabPage3.Controls.Add(this.groupBox3);
             this.tabPage3.Controls.Add(this.groupBox2);
@@ -1617,7 +1619,7 @@ namespace QuanLyPhuKienDienTu
             // 
             // TN_buttonThemSPMoi
             // 
-            this.TN_buttonThemSPMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.TN_buttonThemSPMoi.BackColor = System.Drawing.Color.LightBlue;
             this.TN_buttonThemSPMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TN_buttonThemSPMoi.ForeColor = System.Drawing.Color.Black;
             this.TN_buttonThemSPMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1888,10 +1890,10 @@ namespace QuanLyPhuKienDienTu
             // 
             // buttonTimTH
             // 
-            this.buttonTimTH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.buttonTimTH.BackColor = System.Drawing.Color.LightBlue;
             this.buttonTimTH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTimTH.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.buttonTimTH.Location = new System.Drawing.Point(223, 331);
+            this.buttonTimTH.Location = new System.Drawing.Point(35, 333);
             this.buttonTimTH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonTimTH.Name = "buttonTimTH";
             this.buttonTimTH.Size = new System.Drawing.Size(188, 45);
@@ -1902,10 +1904,10 @@ namespace QuanLyPhuKienDienTu
             // 
             // buttonQuayLai
             // 
-            this.buttonQuayLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.buttonQuayLai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.buttonQuayLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonQuayLai.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.buttonQuayLai.Location = new System.Drawing.Point(36, 330);
+            this.buttonQuayLai.Location = new System.Drawing.Point(238, 333);
             this.buttonQuayLai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonQuayLai.Name = "buttonQuayLai";
             this.buttonQuayLai.Size = new System.Drawing.Size(173, 45);
@@ -1916,7 +1918,7 @@ namespace QuanLyPhuKienDienTu
             // 
             // buttonThemMoi
             // 
-            this.buttonThemMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.buttonThemMoi.BackColor = System.Drawing.Color.LightBlue;
             this.buttonThemMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonThemMoi.ForeColor = System.Drawing.SystemColors.InfoText;
             this.buttonThemMoi.Location = new System.Drawing.Point(199, 42);
@@ -2010,11 +2012,11 @@ namespace QuanLyPhuKienDienTu
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.groupBox1.Controls.Add(this.TN_dgvTH);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(6, 7);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1151, 305);
+            this.groupBox1.Size = new System.Drawing.Size(1149, 303);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách thương hiệu";

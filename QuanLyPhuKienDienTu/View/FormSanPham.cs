@@ -59,7 +59,11 @@ namespace QuanLyPhuKienDienTu.View
             //dtBaoHanh.DataBindings.Add("Value", list, "ThoiLuongBaoHanh");
             //dtBaoHanh.Format = DateTimePickerFormat.Custom;
             // dtBaoHanh.CustomFormat = "MM/dd/yyyy";
-           
+            dgvSanPham.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvSanPham.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvSanPham.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvSanPham.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
         }
         public void SetCBBThuongHieu()
         {

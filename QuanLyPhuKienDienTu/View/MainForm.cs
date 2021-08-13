@@ -79,6 +79,7 @@ namespace QuanLyPhuKienDienTu
             }
             TB_cbbLoai.SelectedIndex = 0;
 
+            // Set combobox thương hiệu của tab bán
             foreach (ThuongHieu i in BLL.BLL_ThuongHieu.Instance.GetListThuongHieu())
             {
                 TB_cbbTH.Items.Add(new CBBItem
@@ -88,7 +89,7 @@ namespace QuanLyPhuKienDienTu
                 });
                 
             }
-
+            // Set combobox thương hiệu của tab nhập
             foreach (ThuongHieu i in BLL.BLL_ThuongHieu.Instance.GetListThuongHieu())
             {
                 TN_cbbTimTH.Items.Add(new CBBItem
@@ -135,6 +136,8 @@ namespace QuanLyPhuKienDienTu
             TB_dgvSanPham.DataSource = BLL.BLL_SanPham.Instance.GetSanPham_Views("All", "All", "All", "All");
             SetShow(TB_dgvSanPham);
             LoadSanPhamView();
+            TB_dgvSanPham.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            TB_dgvSanPham.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         // Ẩn các column không cần thiết
@@ -211,18 +214,14 @@ namespace QuanLyPhuKienDienTu
                 if (index != -100)
                 {
 
-                    
-
                     int SLgTruoc = Convert.ToInt32(TB_lvGioHang.Items[index].SubItems[1].Text);
-
                     int SLgSau = SLgTruoc + SLgThem;
 
 
-                    
-                    TB_lvGioHang.Items[index].SubItems[1].Text = SLgSau.ToString();
-                    TB_lvGioHang.Items[index].SubItems[3].Text = ((SLgSau * i.GiaBan).ToString());
+                    TB_lvGioHang.Items[index].SubItems[1].Text = SLgSau.ToString(); // Cột số lượng
+                    TB_lvGioHang.Items[index].SubItems[3].Text = ((SLgSau * i.GiaBan).ToString());  // Cột tổng giá bán của sản phẩm 
 
-                    TongTienHoaDonBan += (SLgThem * i.GiaBan);
+                    TongTienHoaDonBan += (SLgThem * i.GiaBan);  
                     TB_txtTongTien.Text = TongTienHoaDonBan.ToString();
 
                 }
@@ -232,9 +231,9 @@ namespace QuanLyPhuKienDienTu
 
                     listView.Tag = i;
 
-                    listView.SubItems.Add(numericSoLuongBan.Value.ToString());
-                    listView.SubItems.Add(i.GiaBan.ToString());
-                    listView.SubItems.Add((i.GiaBan * SLgThem).ToString());
+                    listView.SubItems.Add(numericSoLuongBan.Value.ToString()); // Số lượng bán
+                    listView.SubItems.Add(i.GiaBan.ToString());  // Giá bán
+                    listView.SubItems.Add((i.GiaBan * SLgThem).ToString());  // Số tiền
 
                     TongTienHoaDonBan += (i.GiaBan * SLgThem);
 
@@ -253,7 +252,6 @@ namespace QuanLyPhuKienDienTu
         public void DeleteListViewBan()
         {
 
-           
                 string tensp = TB_lvGioHang.SelectedItems[0].SubItems[0].Text;
                 int SLgXoa = Convert.ToInt32(numericSoLuongBan.Value);
                 int SLgTruoc = Convert.ToInt32(TB_lvGioHang.SelectedItems[0].SubItems[1].Text);
@@ -275,8 +273,6 @@ namespace QuanLyPhuKienDienTu
                     TB_txtTongTien.Text = TongTienHoaDonBan.ToString();
                 }
             
-            
-
         }
 
 
@@ -380,7 +376,6 @@ namespace QuanLyPhuKienDienTu
         {
             try
             {
-
                 khachHang = BLL.BLL_KhachHang.Instance.GetKhachHangBySDT(TB_cbbSDT.Text);
                 if (khachHang != null)
                     LoadKhachHang(khachHang);
@@ -589,8 +584,6 @@ namespace QuanLyPhuKienDienTu
                 if (index != -100)
                 {
 
-                    
-
                     int SLgTruoc = Convert.ToInt32(TN_listViewNhap.Items[index].SubItems[1].Text);
 
                    int SLgSau = SLgTruoc + Convert.ToInt32(numericUpDownNhap.Value);
@@ -666,6 +659,11 @@ namespace QuanLyPhuKienDienTu
             LoadSanPhamView3();
 
             //MessageBox.Show(TN_dgvTH.CurrentRow.Cells[1].Value.ToString());
+
+            TN_dgvTH.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            TN_dgvTH.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            TN_dgvTH.Columns["GiaNhap"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
 
             buttonQuayLai.Enabled = true;
             TN_buttonThemSPMoi.Enabled = true;

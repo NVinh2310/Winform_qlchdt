@@ -25,6 +25,8 @@ namespace QuanLyPhuKienDienTu.View
         {
             dataGridView.DataSource = BLL_ThongTinNhap.Instance.HoaDonNhap();
             Process.InvisibleAttributes(dataGridView, new object[] { "MaHoaDonNhap" });
+            dataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         private void SetCBB()

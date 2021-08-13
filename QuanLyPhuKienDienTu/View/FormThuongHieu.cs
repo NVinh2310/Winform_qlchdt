@@ -86,6 +86,12 @@ namespace QuanLyPhuKienDienTu.View
                 btnThem.Enabled = false;
                 btnSua.Enabled = false;
                 btnXem.Enabled = false;
+
+                dgvThuongHieu.Columns["GiaBan"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvThuongHieu.Columns["GiaNhap"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvThuongHieu.Columns["ThoiLuongBaoHanh"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvThuongHieu.Columns["SoLuongTonKho"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             }
             catch(Exception)
             {

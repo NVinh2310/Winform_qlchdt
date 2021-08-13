@@ -238,7 +238,7 @@ namespace QuanLyPhuKienDienTu.View
             // btnHuyTim
             // 
             this.btnHuyTim.BackColor = System.Drawing.Color.Snow;
-            this.btnHuyTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyTim.ForeColor = System.Drawing.Color.Black;
             this.btnHuyTim.Location = new System.Drawing.Point(292, 100);
             this.btnHuyTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -261,9 +261,9 @@ namespace QuanLyPhuKienDienTu.View
             // btnTimKiem
             // 
             this.btnTimKiem.BackColor = System.Drawing.Color.Snow;
-            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.Black;
-            this.btnTimKiem.Location = new System.Drawing.Point(176, 98);
+            this.btnTimKiem.Location = new System.Drawing.Point(178, 100);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(86, 36);
@@ -276,6 +276,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnHuy.Enabled = false;
+            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.Black;
             this.btnHuy.Location = new System.Drawing.Point(357, 208);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -290,6 +291,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnLuu.Enabled = false;
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.Black;
             this.btnLuu.Location = new System.Drawing.Point(230, 208);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -303,6 +305,7 @@ namespace QuanLyPhuKienDienTu.View
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.Color.Snow;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
             this.btnXoa.Location = new System.Drawing.Point(102, 208);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -316,6 +319,7 @@ namespace QuanLyPhuKienDienTu.View
             // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.Color.Snow;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.Black;
             this.btnSua.Location = new System.Drawing.Point(357, 155);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -329,6 +333,7 @@ namespace QuanLyPhuKienDienTu.View
             // btnThem
             // 
             this.btnThem.BackColor = System.Drawing.Color.Snow;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.Black;
             this.btnThem.Location = new System.Drawing.Point(230, 155);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -342,6 +347,7 @@ namespace QuanLyPhuKienDienTu.View
             // btnXem
             // 
             this.btnXem.BackColor = System.Drawing.Color.Snow;
+            this.btnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXem.ForeColor = System.Drawing.Color.Black;
             this.btnXem.Location = new System.Drawing.Point(102, 155);
             this.btnXem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -356,7 +362,7 @@ namespace QuanLyPhuKienDienTu.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1272, 725);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
