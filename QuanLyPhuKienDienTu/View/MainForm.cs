@@ -222,7 +222,7 @@ namespace QuanLyPhuKienDienTu
                     TB_lvGioHang.Items[index].SubItems[3].Text = ((SLgSau * i.GiaBan).ToString());  // Cột tổng giá bán của sản phẩm 
 
                     TongTienHoaDonBan += (SLgThem * i.GiaBan);  
-                    TB_txtTongTien.Text = TongTienHoaDonBan.ToString();
+                    TB_txtTongTien.Text = ConvertToPrice(TongTienHoaDonBan);
 
                 }
                 else
@@ -238,7 +238,7 @@ namespace QuanLyPhuKienDienTu
                     TongTienHoaDonBan += (i.GiaBan * SLgThem);
 
                     TB_lvGioHang.Items.Add(listView);
-                    TB_txtTongTien.Text = TongTienHoaDonBan.ToString();
+                    TB_txtTongTien.Text = ConvertToPrice(TongTienHoaDonBan);
                 }
             }
             catch (Exception)
@@ -261,7 +261,7 @@ namespace QuanLyPhuKienDienTu
                 {
                     TongTienHoaDonBan  -= Convert.ToDecimal(TB_lvGioHang.SelectedItems[0].SubItems[3].Text);//
                     TB_lvGioHang.SelectedItems[0].Remove();
-                    TB_txtTongTien.Text = TongTienHoaDonBan.ToString();
+                    TB_txtTongTien.Text = ConvertToPrice(TongTienHoaDonBan);
                     
                 }
                 else
@@ -270,7 +270,7 @@ namespace QuanLyPhuKienDienTu
                     TB_lvGioHang.SelectedItems[0].SubItems[1].Text = SLgSau.ToString();
                     TB_lvGioHang.SelectedItems[0].SubItems[3].Text = ((SLgSau * GiaBan).ToString());
                     TongTienHoaDonBan -= (GiaBan * SLgXoa);
-                    TB_txtTongTien.Text = TongTienHoaDonBan.ToString();
+                    TB_txtTongTien.Text = ConvertToPrice(TongTienHoaDonBan);
                 }
             
         }
@@ -595,7 +595,7 @@ namespace QuanLyPhuKienDienTu
                     TN_listViewNhap.Items[index].SubItems[1].Text = SLgSau.ToString();
                     TN_listViewNhap.Items[index].SubItems[3].Text = ((SLgSau * GiaNhap).ToString());
                     TongTienHoaDonNhap  += (SoLuongNhap * GiaNhap);
-                    TN_txtTongGia.Text = TongTienHoaDonNhap.ToString();
+                    TN_txtTongGia.Text = ConvertToPrice(TongTienHoaDonNhap);
                 }
                 else
                 {
@@ -608,7 +608,7 @@ namespace QuanLyPhuKienDienTu
                     listView.SubItems.Add((i.GiaNhap * SoLuongNhap).ToString());
 
                     TongTienHoaDonNhap += (SoLuongNhap * i.GiaNhap);
-                    TN_txtTongGia.Text = TongTienHoaDonNhap.ToString();
+                    TN_txtTongGia.Text = ConvertToPrice(TongTienHoaDonNhap);
 
                     TN_listViewNhap.Items.Add(listView);
                 }
@@ -632,7 +632,7 @@ namespace QuanLyPhuKienDienTu
             {
                  TongTienHoaDonNhap -= Convert.ToDecimal(TN_listViewNhap.SelectedItems[0].SubItems[3].Text);
                 TN_listViewNhap.SelectedItems[0].Remove();
-                TN_txtTongGia.Text = TongTienHoaDonNhap.ToString();
+                TN_txtTongGia.Text = ConvertToPrice(TongTienHoaDonNhap);
             }
             else
             {
@@ -640,7 +640,7 @@ namespace QuanLyPhuKienDienTu
                 TN_listViewNhap.SelectedItems[0].SubItems[1].Text = SLgSau.ToString();
                 TN_listViewNhap.SelectedItems[0].SubItems[3].Text = ((SLgSau * GiaBan).ToString());
                 TongTienHoaDonNhap -=  (SlgXoa * GiaBan);
-                TN_txtTongGia.Text = TongTienHoaDonNhap.ToString();
+                TN_txtTongGia.Text = ConvertToPrice(TongTienHoaDonNhap);
             }
 
         }
@@ -863,6 +863,26 @@ namespace QuanLyPhuKienDienTu
         #endregion
 
         #endregion
+        public string ConvertToPrice(decimal price)
+        {
+            int count = 0;
+            string oldPriceStr = price.ToString();
+            string priceStr = "";
+            for (int i = oldPriceStr.Length - 1; i >= 0; i--)
+            {
+                count++;
+                if (count > 3)
+                {
+                    priceStr = oldPriceStr[i] + "," + priceStr;
+                    count = 1;
+                }
+                else
+                {
+                    priceStr = oldPriceStr[i] + priceStr;
+                }
+            }
+            return priceStr + "đ";
+        }
 
         private void quảnLýSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
