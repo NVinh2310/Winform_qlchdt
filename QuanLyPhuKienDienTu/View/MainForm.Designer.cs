@@ -734,6 +734,7 @@ namespace QuanLyPhuKienDienTu
             this.TB_dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TB_dgvSanPham.Size = new System.Drawing.Size(1128, 272);
             this.TB_dgvSanPham.TabIndex = 2;
+            this.TB_dgvSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TB_dgvSanPham_CellContentClick);
             // 
             // groupBox5
             // 

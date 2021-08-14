@@ -23,7 +23,7 @@ namespace QuanLyPhuKienDienTu
 
         public ThuongHieu thuongHieu { get; set; }
 
-        static decimal TongTienHoaDonBan ;
+        static decimal TongTienHoaDonBan =0;  
         static decimal TongTienHoaDonNhap;
 
         public MainForm(bool check)
@@ -259,7 +259,7 @@ namespace QuanLyPhuKienDienTu
 
                 if (SLgSau < 1)
                 {
-                    TongTienHoaDonBan  -= Convert.ToDecimal(TB_lvGioHang.SelectedItems[0].SubItems[3].Text);
+                    TongTienHoaDonBan  -= Convert.ToDecimal(TB_lvGioHang.SelectedItems[0].SubItems[3].Text);//
                     TB_lvGioHang.SelectedItems[0].Remove();
                     TB_txtTongTien.Text = TongTienHoaDonBan.ToString();
                     
@@ -359,6 +359,8 @@ namespace QuanLyPhuKienDienTu
                         show();
                     }
                     TB_lvGioHang.Items.Clear();
+                    TongTienHoaDonBan = 0;
+                    TB_txtTongTien.Text = "";
 
                     MessageBox.Show("     ♥♥♥   \nThanh toán thành công ");
                 }
@@ -809,7 +811,8 @@ namespace QuanLyPhuKienDienTu
                         BLL.BLL_SanPham.Instance.SanPhamSauGiaoDich(y.MaSanPham, slgSauGiaoDich);
                     }
                     MessageBox.Show("Thanh toán thành công! ♥♥♥");
-
+                    TongTienHoaDonNhap = 0;
+                    TN_txtTongGia.Text = "";
                     show();
                     buttonQuayLai_Click(sender, e);
                 }    
@@ -950,6 +953,9 @@ namespace QuanLyPhuKienDienTu
             del();
         }
 
-        
+        private void TB_dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
